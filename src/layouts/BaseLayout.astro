@@ -3,57 +3,58 @@
 // https://docs.astro.build/en/core-concepts/layouts/
 
 // Component Imports
-import MainHead from '../components/MainHead.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import MainHead from "../components/MainHead.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
+  title?: string | undefined;
+  description?: string | undefined;
 }
 
 const { title, description } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<MainHead title={title} description={description} />
-	</head>
-	<body>
-		<div class="stack">
-			<Nav />
-			<slot />
-			<Footer />
-		</div>
+  <head>
+    <MainHead title={title} description={description} />
+  </head>
+  <body>
+    <div class="stack">
+      <Nav />
+      <slot />
+      <Footer />
+    </div>
 
-		<script>
-			// Add “loaded” class once the document has completely loaded.
-			addEventListener('load', () => document.documentElement.classList.add('loaded'));
-		</script>
+    <script>
+      // Add “loaded” class once the document has completely loaded.
+      addEventListener("load", () =>
+        document.documentElement.classList.add("loaded")
+      );
+    </script>
 
-		<style>
-			:root {
-				--_placeholder-bg: linear-gradient(transparent, transparent);
-				--bg-image-main: url('/assets/backgrounds/bg-main-light-800w.jpg');
-				--bg-image-main-curves: url('/assets/backgrounds/bg-main-light.svg');
-				--bg-image-subtle-1: var(--_placeholder-bg);
-				--bg-image-subtle-2: var(--_placeholder-bg);
-				--bg-image-footer: var(--_placeholder-bg);
-				--bg-svg-blend-mode: overlay;
-				--bg-blend-mode: darken;
-				--bg-image-aspect-ratio: 2.25;
-				--bg-scale: 1.68;
-				--bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
-				--bg-gradient-size: calc(var(--bg-scale) * 100%);
-			}
+    <style>
+      :root {
+        --_placeholder-bg: linear-gradient(transparent, transparent);
+        --bg-image-main: url("/assets/backgrounds/bg-main-light-800w.jpg");
+        --bg-image-main-curves: url("/assets/backgrounds/bg-main-light.svg");
+        --bg-image-subtle-1: var(--_placeholder-bg);
+        --bg-image-subtle-2: var(--_placeholder-bg);
+        --bg-image-footer: var(--_placeholder-bg);
+        --bg-svg-blend-mode: overlay;
+        --bg-blend-mode: darken;
+        --bg-image-aspect-ratio: 2.25;
+        --bg-scale: 1.68;
+        --bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
+        --bg-gradient-size: calc(var(--bg-scale) * 100%);
+      }
 
-			:root.theme-dark {
-				--bg-image-main: url('/assets/backgrounds/bg-main-dark-800w.jpg');
-				--bg-image-main-curves: url('/assets/backgrounds/bg-main-dark.svg');
-				--bg-svg-blend-mode: darken;
-				--bg-blend-mode: lighten;
-			}
-
-		</style>
-	</body>
+      :root.theme-dark {
+        --bg-image-main: url("/assets/backgrounds/bg-main-dark-800w.jpg");
+        --bg-image-main-curves: url("/assets/backgrounds/bg-main-dark.svg");
+        --bg-svg-blend-mode: darken;
+        --bg-blend-mode: lighten;
+      }
+    </style>
+  </body>
 </html>

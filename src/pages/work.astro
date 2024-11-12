@@ -7,36 +7,49 @@ import ContactCTA from "../components/ContactCTA.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 import InnerPageBanner from "../components/InnerPageBanner.astro";
 import Grid from "../components/Grid.astro";
+import FooterSectionGal from "../components/FooterSectionGal.astro";
+import SlickSlider from "../components/SlickSlider.astro";
 
 const projects = (await getCollection("work")).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 ---
 
 <BaseLayout title="Our Gallery" description="His House Care Center">
-	<style>
-		.banner-top {
-			padding: 100px 0;
-			background-color: var(--gray-900);
-		}
-		.slider-gallery h2{
-			font-family: 'Satoshi regular';
-		}
-	</style>
-	<div class="stack gap-20">
-		<main class=" stack gap-8">
-			<div class="banner-top">
-				<div class="wrapper">
-					<InnerPageBanner title="Our Gallery" pageName='gallery'  image="/public/assets/galleryimg/gallery-frame.png" />
-				</div>
-			</div>
-			<section class="slider-gallery">
-				<div class="container">
-					<h2 class="text-center">Moments of Compassion and Community</h2>
-				</div>
-			</section>
-		</main>
+  <style>
+    .banner-top {
+      padding: 100px 0;
+      background-color: var(--gray-900);
+    }
+    .slider-gallery h2 {
+      font-family: "Satoshi regular";
+    }
+  </style>
+  <div class="stack gap-20">
+    <main class="stack gap-8">
+      <div class="banner-top">
+        <div class="wrapper">
+          <InnerPageBanner
+            title="Our Gallery"
+            pageName="gallery"
+            image="/public/assets/galleryimg/gallery-frame.png"
+          />
+        </div>
+      </div>
+      <section class="slider-gallery">
+        <div class="container">
+          <h2 class="text-center">Moments of Compassion and Community</h2>
+        </div>
+      </section>
+      <section>
+        <div class="wrapper">
+          <SlickSlider />
+        </div>
+      </section>
+    </main>
+  </div>
 
-	</div>
-
+  <section>
+    <FooterSectionGal />
+  </section>
 </BaseLayout>

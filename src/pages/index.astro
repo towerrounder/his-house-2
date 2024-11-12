@@ -16,6 +16,7 @@ import Gallery from "../components/Gallery.astro";
 import BehindTheWheel from "../components/BehindTheWheel.astro";
 import OurMission from "../components/OurMission.astro";
 import Footer from "../components/Footer.astro";
+import SlickSlider from "../components/SlickSlider.astro";
 
 // Page section components
 import ContactCTA from "../components/ContactCTA.astro";
@@ -41,7 +42,7 @@ const projects = (await getCollection("work"))
       >
         <div class="roles">
           <Pill href="/contact" type="contact">Contact Us</Pill>
-          <Pill href="#" type="donate">Donate</Pill>
+          <Pill href="/donate" type="donate">Donate</Pill>
         </div>
       </Hero>
     </header>
