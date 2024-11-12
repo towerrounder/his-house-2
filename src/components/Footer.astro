@@ -1,74 +1,98 @@
 ---
-import Icon from './Icon.astro';
+import Icon from "./Icon.astro";
 const currentYear = new Date().getFullYear();
+import { Image } from "astro:assets";
+import logo from "../../public/assets/logo.png";
 ---
 
 <footer>
-	<div class="group">
-		<p>
-			Designed & Developed in Portland with <a href="https://astro.build/">Astro</a>
-			<Icon icon="rocket-launch" size="1.2em" />
-		</p>
-		<p>&copy; {currentYear} Jeanine White</p>
-	</div>
-	<p class="socials">
-		<a href="https://twitter.com/me"> Twitter</a>
-		<a href="https://github.com/me"> GitHub</a>
-		<a href="https://codepen.io/me"> CodePen</a>
-	</p>
+  <!-- Logo Section -->
+  <div>
+    <a href="/" class="site-title">
+      <Image src={logo} alt="Logo" />
+    </a>
+  </div>
+
+  <!-- Follow Us Section (Center) -->
+  <div class="follow-us">
+    <a href="#" target="_blank" class="social-icon">
+      <img src="/public/assets/Facebook.png" alt="Facebook Logo" />
+    </a>
+    <p>Follow Us</p>
+  </div>
+
+  <!-- Updated Copyright -->
+  <div class="updated-copyright">
+    <p>Copyright 2024 <br /> All rights reserved to His House Care Centre</p>
+  </div>
 </footer>
+
 <style>
-	footer {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-		margin-top: auto;
-		padding: 3rem 2rem 3rem;
-		text-align: center;
-		color: var(--gray-400);
-		font-size: var(--text-sm);
-	}
+  .follow-us {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .follow-us p {
+    font-size: 22px;
 
-	footer a {
-		color: var(--gray-400);
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+    font-weight: 700;
+  }
+  .updated-copyright {
+    text-align: end;
+    font-size: 16px;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: auto;
+    padding: 3rem 2rem 3rem;
+    text-align: center;
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+  }
 
-	footer a:hover,
-	footer a:focus {
-		text-decoration-color: currentColor;
-	}
+  footer a {
+    color: var(--gray-400);
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
 
-	.group {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
+  footer a:hover,
+  footer a:focus {
+    text-decoration-color: currentColor;
+  }
 
-	.socials {
-		display: flex;
-		justify-content: center;
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-	@media (min-width: 50em) {
-		footer {
-			flex-direction: row;
-			justify-content: space-between;
-			padding: 2.5rem 5rem;
-		}
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 
-		.group {
-			flex-direction: row;
-			gap: 1rem;
-			flex-wrap: wrap;
-		}
+  @media (min-width: 50em) {
+    footer {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 2.5rem 5rem;
+    }
 
-		.socials {
-			justify-content: flex-end;
-		}
-	}
+    .group {
+      flex-direction: row;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .socials {
+      justify-content: flex-end;
+    }
+  }
 </style>

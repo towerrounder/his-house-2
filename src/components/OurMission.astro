@@ -1,0 +1,107 @@
+---
+import Pill from "../components/Pill.astro";
+---
+
+<div class="our-mission">
+  <!-- Blue Box with Mission Content -->
+  <div class="content-box">
+    <h2>Our Mission</h2>
+    <p>
+      At His House Care Centre, our mission is to create a homely, loving
+      environment where the elderly and vulnerable are cared for with respect
+      and dignity. We strive to provide the highest standard of care, in line
+      with health and safety guidelines, and to support families by offering
+      quality in-home care for their frail loved ones.
+    </p>
+    <p>
+      We are committed to training and empowering Namibians to become skilled
+      caregivers, working alongside medical professionals to ensure excellent
+      care. Guided by our faith, we seek to fulfill our calling to serve those
+      in need, trusting in and praising our Lord Jesus Christ.
+    </p>
+    <div class="roles">
+      <Pill href="/contact" type="contact">Contact Us</Pill>
+      <Pill href="#" type="donate">Donate</Pill>
+    </div>
+  </div>
+</div>
+<style>
+  .roles {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  /* Our Mission Section */
+  .our-mission {
+    position: relative;
+    background-image: url("/public/assets/5fa06bf85b8df5d73c8f2ff40bea2231.jpeg"); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    height: 700px; /* Adjust height as needed */
+  }
+
+  /* Content Box Styling */
+  .content-box {
+    background-color: #6671b0; /* Semi-transparent dark blue */
+    color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    margin-left: 72px;
+    max-width: 500px;
+  }
+
+  /* Heading Styling */
+  .content-box h2 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  /* Paragraph Styling */
+  .content-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Buttons Styling */
+  .buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .primary-btn {
+    background-color: #fff;
+    color: #003366; /* Dark blue text */
+  }
+
+  .secondary-btn {
+    background-color: #003366; /* Dark blue background */
+    color: #fff;
+  }
+
+  .primary-btn:hover {
+    background-color: #e0e0e0; /* Light gray on hover */
+  }
+
+  .secondary-btn:hover {
+    background-color: #001f4d; /* Darker blue on hover */
+  }
+</style>
