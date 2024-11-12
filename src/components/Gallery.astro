@@ -1,0 +1,192 @@
+---
+const { title, description } = Astro.props;
+import PillGallery from "../components/PillGallery.astro";
+---
+
+<div class="gallery">
+  <!-- Left Section -->
+  <div class="gallery-side gallery-left">
+    <img src="/public/assets/galleryimg/left/Rectangle 13.png" alt="Image 1" />
+    <img src="/public/assets/galleryimg/left/Rectangle 14.png" alt="Image 2" />
+    <img
+      src="/public/assets/galleryimg/left/Rectangle 13 (1).png"
+      alt="Image 3"
+    />
+    <img
+      src="/public/assets/galleryimg/left/Rectangle 14 (1).png"
+      alt="Image 4"
+    />
+    <img
+      src="/public/assets/galleryimg/left/Frame 1000002674.png"
+      alt="Image 5"
+    />
+  </div>
+
+  <div class="gallery-center">
+    <h1>{title}</h1>
+    <div>
+      <p>
+        His House Care Centre, a non-profit organisation, was founded in 2005.
+        We provide 24-hour care for our 22 residents, including elderly
+        individuals and those in need, like a teenage disabled boy removed from
+        his family. One-third of the residents cannot afford their stay and are
+        subsidised.
+      </p>
+
+      <p>
+        <strong> We rely on sponsorships and fundraising events,</strong> such as
+        second-hand sales and sports activities, <strong
+          >to keep operating.</strong
+        > Our vision includes creating jobs and training local caregivers, working
+        alongside medical professionals to ensure high-quality care. With a growing
+        waiting list,
+        <strong>
+          we are seeking funds to expand by acquiring an adjacent house.</strong
+        >
+      </p>
+
+      <p>
+        <strong> Volunteers play a vital role in our community,</strong> offering
+        companionship and support to our residents.
+      </p>
+      <div class="roles">
+        <PillGallery href="/contact" type="contact">Contact Us</PillGallery>
+        <PillGallery href="#" type="donate">Donate</PillGallery>
+      </div>
+    </div>
+    <!-- This will render the HTML content -->
+  </div>
+  <!-- Right Section -->
+  <div class="gallery-side gallery-right">
+    <img
+      src="/public/assets/galleryimg/right/Rectangle 13 (2).png"
+      alt="Image 6"
+    />
+    <img
+      src="/public/assets/galleryimg/right/Rectangle 14 (2).png"
+      alt="Image 7"
+    />
+    <img
+      src="/public/assets/galleryimg/right/Frame 1000002674 (1).png"
+      alt="Image 10"
+    />
+    <img
+      src="/public/assets/galleryimg/right/Rectangle 13 (3).png"
+      alt="Image 8"
+    />
+    <img
+      src="/public/assets/galleryimg/right/Rectangle 14 (3).png"
+      alt="Image 9"
+    />
+  </div>
+</div>
+
+<style>
+  .gallery-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure the container takes the full height */
+  }
+
+  .gallery-content {
+    flex: 1; /* Take up remaining space */
+  }
+  .roles {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .gallery {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  /* Left Side: 2 + 2 + 1 Layout */
+  .gallery-left {
+    display: grid;
+    grid-template-areas:
+      "img1 img2"
+      "img3 img4"
+      "img5 img5";
+    gap: 0.5rem;
+  }
+
+  .gallery-left img:nth-child(1) {
+    grid-area: img1;
+  }
+  .gallery-left img:nth-child(2) {
+    grid-area: img2;
+  }
+  .gallery-left img:nth-child(3) {
+    grid-area: img3;
+  }
+  .gallery-left img:nth-child(4) {
+    grid-area: img4;
+  }
+  .gallery-left img:nth-child(5) {
+    grid-area: img5;
+  }
+
+  /* Right Side: 2 + 1 + 2 Layout */
+  .gallery-right {
+    display: grid;
+    grid-template-areas:
+      "img6 img7"
+      "img8 img8"
+      "img9 img10";
+    gap: 0.5rem;
+  }
+
+  .gallery-right img:nth-child(1) {
+    grid-area: img6;
+  }
+  .gallery-right img:nth-child(2) {
+    grid-area: img7;
+  }
+  .gallery-right img:nth-child(3) {
+    grid-area: img8;
+  }
+  .gallery-right img:nth-child(4) {
+    grid-area: img9;
+  }
+  .gallery-right img:nth-child(5) {
+    grid-area: img10;
+  }
+
+  .gallery-side img {
+    width: 100%;
+    /* height: auto;
+    */
+    height: 100%;
+    border-radius: 4px;
+  }
+
+  /* Center Section Styling */
+  /* Center Section Styling */
+  .gallery-center {
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .gallery-center h1 {
+    font-size: 48px; /* Updated heading size */
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery-center p {
+    text-align: start;
+    font-size: 18px; /* Updated paragraph size */
+    margin-bottom: 1rem;
+  }
+
+  .gallery-center button {
+    padding: 0.7rem 1.5rem;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>

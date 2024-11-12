@@ -3,12 +3,12 @@
 const { href, type } = Astro.props;
 ---
 
-<div class={`pill ${type}`}>
+<div class={`pillgallery ${type}`}>
   <a href={href}><slot /></a>
 </div>
 
 <style>
-  .pill a {
+  .pillgallery a {
     display: flex;
     padding: 1rem 2rem;
     gap: 0.5rem;
@@ -22,13 +22,14 @@ const { href, type } = Astro.props;
   }
 
   /* Style for the "donate" type */
-  .pill.donate a {
+  .pillgallery.donate a {
     color: var(--theme-btn);
     background-color: var(--gray-999);
+    border: 1px solid var(--theme-btn);
   }
 
   /* Style for the "contact" type */
-  .pill.contact a {
+  .pillgallery.contact a {
     color: var(--gray-999);
     background-color: var(--theme-btn);
   }
