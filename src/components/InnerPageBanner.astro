@@ -1,0 +1,118 @@
+---
+interface Props {
+    title: string;
+    pageName?: string;
+    align?: "start" | "center";
+    className?: string;
+    image?: string;
+}
+const { align = "center", pageName, title, className, image } = Astro.props;
+---
+
+<div class="container-fluid">
+    <div class="inner-page-banner">
+        <!-- First Card -->
+
+        <div class=`cols ${pageName == 'donate'? 'card-equal' : 'card-1' }`>
+            <h1>{title}</h1>
+
+            <p>
+                {
+                    pageName === "gallery" ? (
+                        <p class="description">
+                            The <strong>His House Care Centre</strong> Gallery
+                            captures the heart and soul of our community. These
+                            images showcase moments of{" "}
+                            <strong>
+                                joy, compassion, and togetherness shared by
+                                residents, caregivers, and volunteers.
+                            </strong>{" "}
+                            From special events to everyday activities, the
+                            gallery reflects the warmth and care that define
+                            life at His House, highlighting the connections that
+                            make our home a place of comfort and dignity for
+                            all.
+                        </p>
+                    ) : (
+                        <p class="description">
+                            From special events to everyday activities, the
+                            gallery reflects the warmth and care that define
+                            life at His House, highlighting the connections that
+                            make our home a place of comfort and dignity for
+                            all. In the heart of our community, every donation,
+                            no matter its size, <strong>plays a crucial role in
+                            sustaining and enriching the lives of those we serve</strong>{" "}
+                            at His House Care Centre. Your generous
+                            contributions allow us to continue our vital work,
+                            providing care, support, and hope to individuals and
+                            families during their most challenging times.
+                        </p>
+                    )
+                }
+            </p>
+        </div>
+
+        <!-- Second Card -->
+        <div class=`cols ${pageName == 'donate'? 'card-equal' : 'card-2' }`>
+            <img src={image} alt="Image Banner" />
+        </div>
+    </div>
+</div>
+
+<style>
+    /* .container-fluid {
+      background-color: white;
+    } */
+    .container-head {
+        margin-bottom: 50px;
+    }
+    .container-head .m-head {
+        text-align: center;
+    }
+    .inner-page-banner h1 {
+        font-size: 64px;
+        line-height: 76.8px;
+        font-weight: 700;
+        font-family: 'Satoshi regular';
+    }
+    .card-equal{
+        width: 48%;
+    }
+    /* Behind the Wheel section container */
+    .inner-page-banner {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem;
+        align-items: center;
+    }
+
+    /* Card styling */
+    .card-1 {
+        width: 42%; /* Each card takes up 48% to allow space between */
+    }
+    .card-2 {
+        width: 56%; /* Each card takes up 48% to allow space between */
+    }
+
+    .cols {
+        padding: 1rem;
+        text-align: start;
+    }
+
+    /* cols image styling */
+    .cols img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+
+    /* Description styling */
+    .cols .description {
+
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 0.5rem;
+    }
+</style>
