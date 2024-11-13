@@ -54,14 +54,23 @@ const projects = (await getCollection("work"))
           <Gallery title="Welcome to His House Care Centre" description=" " />
         </div>
       </section>
-      <div>
-        <WhatWeProvide />
-      </div>
-
-      <div>
-        <BehindTheWheel />
-      </div>
     </main>
+    <section class="whatweprovide">
+      <main class="wrapper stack gap-20 lg:gap-48">
+        <div>
+          <WhatWeProvide />
+        </div>
+      </main>
+    </section>
+
+    <section>
+      <main class="wrapper stack gap-20 lg:gap-48">
+        <div>
+          <BehindTheWheel />
+        </div>
+      </main>
+    </section>
+
     <div class="stack">
       <OurMission />
     </div>
@@ -92,8 +101,12 @@ const projects = (await getCollection("work"))
       box-shadow: var(--shadow-md);
     }
 
+    .whatweprovide {
+      background-color: #f7f8fc;
+      padding: 60px 0px;
+    }
     @media (max-width: 48em) {
-      .bg_people{
+      .bg_people {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactUs from "../components/ContactUs.astro";
+import ContactDetails from "../components/ContactDetails.astro";
 ---
 
 <BaseLayout title="Contact" description="Send us a message">
@@ -11,6 +12,13 @@ import ContactUs from "../components/ContactUs.astro";
           <ContactUs />
         </div>
       </div>
+    </main>
+    <main class="">
+      <!-- <div class="banner-top"> -->
+      <div class="wrapper">
+        <ContactDetails />
+      </div>
+      <!-- </div> -->
     </main>
   </div>
 </BaseLayout>

@@ -1,0 +1,79 @@
+---
+const {
+  heading = "Where You Find Us",
+  description = "Nestled in the heart of Meersig, Walvis Bay, our location is more than just a street address — it's a beacon of hope and care within the community.",
+  phone = "+123 456 7890",
+  email = "info@yourwebsite.com",
+  address = "Meersig, Walvis Bay, Namibia",
+} = Astro.props;
+---
+
+<style>
+  /* Container */
+  .contact-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url("/public/assets/Captura\ de\ ecrã\ 2024-10-08\,\ às\ 14.22.32\ 1.png")
+      center center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+
+  /* Overlay Box */
+  .overlay-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .overlay-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .overlay-box p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .contact-details {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ccc;
+  }
+
+  .contact-details div {
+    margin: 5px 0;
+  }
+
+  .contact-details strong {
+    color: #fff;
+  }
+
+  .contact-details a {
+    color: #ffdd57;
+    text-decoration: none;
+  }
+
+  .contact-details a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="contact-section">
+  <!-- Overlay Box -->
+  <div class="overlay-box">
+    <h2>{heading}</h2>
+    <p>{description}</p>
+    <div class="contact-details">
+      <div><strong>Phone:</strong> <a href={`tel:${phone}`}>{phone}</a></div>
+      <div><strong>Email:</strong> <a href={`mailto:${email}`}>{email}</a></div>
+      <div><strong>Address:</strong> {address}</div>
+    </div>
+  </div>
+</div>
