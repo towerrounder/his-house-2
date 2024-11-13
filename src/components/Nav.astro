@@ -4,13 +4,14 @@ import type { iconPaths } from './IconPaths';
 import CallToAction from './CallToAction.astro';
 import { Image } from 'astro:assets';
 import logo from '../../public/assets/logo.svg'; // Path to your image
+import BarIcon from '../../public/assets/bar.svg'; // Path to your image
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
 	{ label: 'Home', href: '/' },
 	{ label: 'Gallery', href: '/work/' },
 	{ label: 'Donate', href: '/donate/' },
-	{ label: 'Contact', href: '/about/' },
+	{ label: 'Contact', href: '/contact-us/' },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -34,7 +35,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			<template>
 				<button class="menu-button" aria-expanded="false">
 					<span class="sr-only">Menu</span>
-					<Image src={logo} alt="Logo"  />
+					<Image src={BarIcon} alt="Logo"  />
 
 				</button>
 			</template>
@@ -190,29 +191,29 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		border-radius: 999rem;
 		padding: 0.5rem;
 		font-size: 1.5rem;
-		color: var(--gray-300);
-		background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
-		box-shadow: var(--shadow-md);
+		/* color: var(--gray-300); */
+		background: transparent;
+		/* box-shadow: var(--shadow-md); */
 	}
 
 	.menu-button[aria-expanded='true'] {
 		color: var(--gray-0);
-		background: linear-gradient(180deg, var(--gray-600), transparent),
-			radial-gradient(var(--gray-900), var(--gray-800) 150%);
+		/* background: linear-gradient(180deg, var(--gray-600), transparent), */
+			/* radial-gradient(var(--gray-900), var(--gray-800) 150%); */
 	}
 
 	.menu-button[hidden] {
 		display: none;
 	}
 
-	.menu-button::before {
+	/* .menu-button::before {
 		position: absolute;
 		inset: -1px;
 		content: '';
-		background: var(--gradient-stroke);
-		border-radius: 999rem;
+		/* background: var(--gradient-stroke); */
+		/* border-radius: 999rem; */
 		z-index: -1;
-	}
+	} */
 
 	.menu-content {
 		/* position: absolute; */

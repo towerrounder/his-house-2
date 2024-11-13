@@ -10,15 +10,15 @@ import PillGallery from "../components/PillGallery.astro";
     <img src="/public/assets/galleryimg/left/Rectangle 14.png" alt="Image 2" />
     <img
       src="/public/assets/galleryimg/left/Rectangle 13 (1).png"
-      alt="Image 3"
+      alt="Image 3" class="img_resp_hide"
     />
     <img
       src="/public/assets/galleryimg/left/Rectangle 14 (1).png"
-      alt="Image 4"
+      alt="Image 4" class="img_resp_hide"
     />
     <img
       src="/public/assets/galleryimg/left/Frame 1000002674.png"
-      alt="Image 5"
+      alt="Image 5" class="img_resp_hide"
     />
   </div>
 
@@ -58,26 +58,30 @@ import PillGallery from "../components/PillGallery.astro";
   </div>
 
   <!-- Right Section -->
-  <div class="gallery-side gallery-right">
+  <div class="gallery-side gallery-right ">
     <img
       src="/public/assets/galleryimg/right/Rectangle 13 (2).png"
-      alt="Image 6"
+      alt="Image 6" class="img_resp_hide"
     />
     <img
       src="/public/assets/galleryimg/right/Rectangle 14 (2).png"
-      alt="Image 7"
+      alt="Image 7" class="img_resp_hide"
     />
     <img
       src="/public/assets/galleryimg/right/Frame 1000002674 (1).png"
-      alt="Image 10"
+      alt="Image 10" class="img_resp_hide"
+    />
+    <img
+      src="/public/assets/galleryimg/welcome-img-resp.png"
+      alt="Image 10" class="img_desktop_hide"
     />
     <img
       src="/public/assets/galleryimg/right/Rectangle 13 (3).png"
-      alt="Image 8"
+      alt="Image 8" class="img_resp_hide"
     />
     <img
       src="/public/assets/galleryimg/right/Rectangle 14 (3).png"
-      alt="Image 9"
+      alt="Image 9" class="img_resp_hide"
     />
   </div>
 </div>
@@ -167,5 +171,43 @@ import PillGallery from "../components/PillGallery.astro";
     display: flex;
     gap: 1rem;
     justify-content: center;
+  }
+  .img_desktop_hide{
+    width: 100% !important;
+  }
+  @media (min-width:48em) {
+    .img_desktop_hide{
+      display: none;
+      
+    }
+  }
+  @media (max-width:48em) {
+    .gallery-right{
+      width: 100%;
+    }
+    .img_resp_hide{
+      display: none;
+    }
+    .gallery-left{
+      flex-wrap: nowrap;
+      margin-top: 3rem;
+      width: 100%;
+    }
+    .gallery{
+      flex-direction: column;
+      text-align: left;
+    }
+    
+    .head{
+      text-align: left;
+      font-size: 32px;
+      line-height: 40px;
+      font-family: 'Satoshi';
+      font-weight: 700;
+      margin-bottom: 1.3rem;
+    }
+    .roles{
+      justify-content: flex-start;
+    }
   }
 </style>

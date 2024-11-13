@@ -45,13 +45,14 @@ import logo from "../../public/assets/logo.svg";
   footer {
     background-color: white;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 3rem;
     margin-top: auto;
     padding: 3rem 2rem 3rem;
     text-align: center;
     color: var(--gray-400);
     font-size: var(--text-sm);
+    flex-wrap: wrap;
   }
 
   footer a {
@@ -78,7 +79,19 @@ import logo from "../../public/assets/logo.svg";
     gap: 1rem;
     flex-wrap: wrap;
   }
-
+  /* equal to 768px */
+  @media (max-width: 48em) { 
+    footer{
+      justify-content: space-between;
+    }
+    .follow-us, footer .site-title {
+      /* width: 50%; */
+    }
+    .updated-copyright{
+      width: 100%;
+      text-align: left;
+    }
+  }
   @media (min-width: 50em) {
     footer {
       flex-direction: row;

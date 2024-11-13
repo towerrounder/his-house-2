@@ -1,12 +1,13 @@
 <!-- what we provide -->
 <div class="container-head">
-  <div class="m-head">
+  <div class="head">
     <h2>What We Provide</h2>
   </div>
 </div>
 
-<div class="container">
-  <!-- First Card: Large with Heading and Paragraph -->
+<!-- <div class="container"> -->
+<!-- First Card: Large with Heading and Paragraph -->
+<div class="frail-care-inner">
   <div class="card large-card">
     <h3>Frail Care Centre</h3>
     <p>
@@ -43,7 +44,9 @@
     </div>
   </div>
 </div>
-<div class="container">
+
+<!-- </div> -->
+<div class="frail-care-inner">
   <!-- First Card: Large with Heading and Paragraph -->
   <div class="card large-card">
     <h3>Assisted Living</h3>
@@ -66,7 +69,7 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="frail-care-inner">
   <!-- First Card: Large with Heading and Paragraph -->
   <div class="card large-card">
     <h3>Respite Care</h3>
@@ -106,12 +109,12 @@
   .container-head {
     margin-bottom: 50px;
   }
-  .container-head .m-head {
+  .container-head .head {
     text-align: center;
   }
 
   /* Container setup */
-  .container {
+  .frail-care-inner {
     width: 100%; /* Or set a fixed width like max-width: 1200px for larger screens */
     display: flex;
     gap: 1rem;
@@ -151,5 +154,15 @@
   }
   .small-card.single {
     width: 65%;
+  }
+  @media (max-width: 48em) {
+    .head h2 {
+      text-align: left;
+      font-size: 32px;
+      line-height: 40px;
+      font-family: "Satoshi";
+      font-weight: 700;
+      margin-bottom: 1.3rem;
+    }
   }
 </style>

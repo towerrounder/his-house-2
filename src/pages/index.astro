@@ -92,6 +92,13 @@ const projects = (await getCollection("work"))
       box-shadow: var(--shadow-md);
     }
 
+    @media (max-width: 48em) {
+      .bg_people{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
     @media (min-width: 50em) {
       .hero {
         display: grid;
