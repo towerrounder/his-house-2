@@ -1,0 +1,162 @@
+---
+const {
+  heading = "Contact Us",
+  paragraph = "Contacting His House Care Centre is the first step toward a meaningful connection. Whether you have questions or want to share your thoughts, our team is here to listen and respond. By filling out the form below, you're engaging with a caring community dedicated to making a difference. We appreciate your interest and look forward to hearing from you.",
+} = Astro.props;
+---
+
+<style>
+  /* Container */
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    /* width: 80%; */
+    margin: 0 auto;
+    padding: 40px 0;
+    max-width: 1200px;
+    align-items: center;
+  }
+
+  /* Content Section */
+  .content-section {
+    flex: 1;
+  }
+
+  .content-heading {
+    font-size: 45px;
+    margin-bottom: 10px;
+    font-family: "Satoshi";
+  }
+
+  .content-paragraph {
+    font-size: 20px;
+    color: #555;
+  }
+
+  /* Form Section */
+  .form-section {
+    width: 400px;
+    align-self: flex-start;
+    margin-left: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-section h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  /* Form Styles */
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #2f3396;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .submit-button:hover {
+    background-color: #1c1f58;
+  }
+  .main-form-section {
+    flex: 1;
+  }
+  .banner-top {
+    background-color: #f7f8fc;
+  }
+</style>
+
+<div class="contact-container">
+  <!-- Content Section -->
+  <div class="content-section">
+    <h1 class="content-heading">{heading}</h1>
+    <p class="content-paragraph">{paragraph}</p>
+  </div>
+
+  <!-- Form Section -->
+  <div class="main-form-section">
+    <div class="form-section">
+      <h2>Send us a message</h2>
+      <form>
+        <!-- Name & Surname -->
+        <div class="form-group">
+          <label for="name">Name & Surname</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your full name"
+            required
+          />
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Your phone number"
+            required
+          />
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your email address"
+            required
+          />
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Your message"
+            required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,14 @@ import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
 import InnerPageBanner from "../components/InnerPageBanner.astro";
 import FooterSectionDonate from "../components/FooterSectionDonate.astro";
+import DonateInnerSection from "../components/DonateInnerSection.astro";
+const bankDetails = {
+  accountName: "First National Bank, Namibia",
+
+  bankName: "Walvis Bay",
+  ifscCode: "782172",
+  accountNumber: "62080745501",
+};
 ---
 
 <BaseLayout title="Donate" description="About Jeanine White Lorem Ipsum">
@@ -18,6 +26,14 @@ import FooterSectionDonate from "../components/FooterSectionDonate.astro";
             image="/public/assets/donate.png"
           />
         </div>
+      </div>
+    </main>
+    <main>
+      <div class="wrapper">
+        <DonateInnerSection
+          logoImageUrl="/public/assets/banklogo.svg"
+          bankDetails={bankDetails}
+        />
       </div>
     </main>
     <section>

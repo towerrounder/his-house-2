@@ -30,7 +30,7 @@
   --gray-600: #a3acc8;
   --gray-700: #c3cadb;
   --gray-800: #e3e6ee;
-  --gray-900: #F7F8FC;
+  --gray-900: #f7f8fc;
   --gray-999-basis: 0, 0%, 100%;
   --gray-999_40: hsla(var(--gray-999-basis), 0.4);
   --gray-999: #ffffff;
@@ -175,7 +175,7 @@ a {
   color: var(--link-color);
   font-family: var(--font-body);
 }
-.text-center{
+.text-center {
   text-align: center;
 }
 h1,
@@ -211,7 +211,6 @@ h5 {
 
 /* Utilities */
 
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -235,7 +234,6 @@ h5 {
 .stack {
   display: flex;
   flex-direction: column;
-  
 }
 
 .gap-2 {
@@ -299,4 +297,27 @@ h5 {
   .lg\:gap-48 {
     gap: 12rem;
   }
+}
+.slick-prev:before,
+.slick-next:before {
+  color: #2f3396 !important;
+}
+.slick-dots li.slick-active button:before {
+  font-size: 15px;
+  color: #2f3396 !important;
+}
+.slick-dots li button:before {
+  font-size: 15px;
+  color: #2f3396 !important;
+}
+.slick-dots {
+  margin-top: 25px !important;
+  position: absolute;
+  bottom: -55px !important;
+  display: block;
+  width: 100%;
+  padding: 0;
+  /* margin: 0; */
+  list-style: none;
+  text-align: center;
 }
