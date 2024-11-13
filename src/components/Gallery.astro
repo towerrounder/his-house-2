@@ -10,15 +10,18 @@ import PillGallery from "../components/PillGallery.astro";
     <img src="/public/assets/galleryimg/left/Rectangle 14.png" alt="Image 2" />
     <img
       src="/public/assets/galleryimg/left/Rectangle 13 (1).png"
-      alt="Image 3" class="img_resp_hide"
+      alt="Image 3"
+      class="img_resp_hide"
     />
     <img
       src="/public/assets/galleryimg/left/Rectangle 14 (1).png"
-      alt="Image 4" class="img_resp_hide"
+      alt="Image 4"
+      class="img_resp_hide"
     />
     <img
       src="/public/assets/galleryimg/left/Frame 1000002674.png"
-      alt="Image 5" class="img_resp_hide"
+      alt="Image 5"
+      class="img_resp_hide"
     />
   </div>
 
@@ -58,30 +61,36 @@ import PillGallery from "../components/PillGallery.astro";
   </div>
 
   <!-- Right Section -->
-  <div class="gallery-side gallery-right ">
+  <div class="gallery-side gallery-right">
     <img
       src="/public/assets/galleryimg/right/Rectangle 13 (2).png"
-      alt="Image 6" class="img_resp_hide"
+      alt="Image 6"
+      class="img_resp_hide"
     />
     <img
       src="/public/assets/galleryimg/right/Rectangle 14 (2).png"
-      alt="Image 7" class="img_resp_hide"
+      alt="Image 7"
+      class="img_resp_hide"
     />
     <img
       src="/public/assets/galleryimg/right/Frame 1000002674 (1).png"
-      alt="Image 10" class="img_resp_hide"
+      alt="Image 10"
+      class="img_resp_hide"
     />
-    <img
+    <!-- <img
       src="/public/assets/galleryimg/welcome-img-resp.png"
-      alt="Image 10" class="img_desktop_hide"
+      alt="Image 10"
+      class="img_desktop_hide"
+    /> -->
+    <img
+      src="/public/assets/galleryimg/right/9 (1).png"
+      alt="Image 8"
+      class="img_resp_hide"
     />
     <img
-      src="/public/assets/galleryimg/right/Rectangle 13 (3).png"
-      alt="Image 8" class="img_resp_hide"
-    />
-    <img
-      src="/public/assets/galleryimg/right/Rectangle 14 (3).png"
-      alt="Image 9" class="img_resp_hide"
+      src="/public/assets/galleryimg/right/9 (2).png"
+      alt="Image 9"
+      class="img_resp_hide"
     />
   </div>
 </div>
@@ -100,25 +109,29 @@ import PillGallery from "../components/PillGallery.astro";
   .gallery-left {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 5px;
     flex: 1;
   }
 
   .gallery-left img:nth-child(1),
   .gallery-left img:nth-child(2) {
-    width: 47%; /* 50% for image 1 and image 2 */
+    width: 48.8%; /* 50% for image 1 and image 2 */
+    border-radius: 2px;
   }
 
   .gallery-left img:nth-child(3) {
     width: 64%; /* 70% for image 3 */
+    border-radius: 2px;
   }
 
   .gallery-left img:nth-child(4) {
-    width: 30%; /* 30% for image 4 */
+    width: 33.5%; /* 30% for image 4 */
+    border-radius: 2px;
   }
 
   .gallery-left img:nth-child(5) {
     width: 99%; /* 100% for image 5 */
+    border-radius: 2px;
   }
 
   /* Right Section Flexbox Layout */
@@ -126,25 +139,29 @@ import PillGallery from "../components/PillGallery.astro";
   .gallery-right {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 5px;
     flex: 1;
   }
 
   /* Right Section Image Layout */
   .gallery-right img:nth-child(1),
   .gallery-right img:nth-child(2) {
-    width: 47%; /* 50% for Image 6 and Image 7 */
+    width: 48.8%; /* 50% for Image 6 and Image 7 */
+    border-radius: 2px;
   }
 
   .gallery-right img:nth-child(3) {
     width: 99%; /* 100% for Image 10 */
+    border-radius: 2px;
   }
 
   .gallery-right img:nth-child(4) {
     width: 64%;
+    border-radius: 2px;
   }
   .gallery-right img:nth-child(5) {
-    width: 30%; /* 50% for Image 8 and Image 9 */
+    width: 33.5%; /* 50% for Image 8 and Image 9 */
+    border-radius: 2px;
   }
 
   /* Center Section Styling */
@@ -172,41 +189,40 @@ import PillGallery from "../components/PillGallery.astro";
     gap: 1rem;
     justify-content: center;
   }
-  .img_desktop_hide{
+  .img_desktop_hide {
     width: 100% !important;
   }
-  @media (min-width:48em) {
-    .img_desktop_hide{
+  @media (min-width: 48em) {
+    .img_desktop_hide {
       display: none;
-      
     }
   }
-  @media (max-width:48em) {
-    .gallery-right{
+  @media (max-width: 48em) {
+    .gallery-right {
       width: 100%;
     }
-    .img_resp_hide{
+    .img_resp_hide {
       display: none;
     }
-    .gallery-left{
+    .gallery-left {
       flex-wrap: nowrap;
       margin-top: 3rem;
       width: 100%;
     }
-    .gallery{
+    .gallery {
       flex-direction: column;
       text-align: left;
     }
-    
-    .head{
+
+    .head {
       text-align: left;
       font-size: 32px;
       line-height: 40px;
-      font-family: 'Satoshi';
+      font-family: "Satoshi";
       font-weight: 700;
       margin-bottom: 1.3rem;
     }
-    .roles{
+    .roles {
       justify-content: flex-start;
     }
   }
