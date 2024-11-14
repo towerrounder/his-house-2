@@ -10,7 +10,6 @@ const images = [
   "/public/assets/sliderimages/3cd72364f18fa9b0ac1c25c967e1d3e9.jpeg",
   "/public/assets/sliderimages/PortraitCard.png",
   "/public/assets/sliderimages/PortraitCard.png",
-  "/public/assets/sliderimages/PortraitCard.png",
 ];
 ---
 
@@ -24,7 +23,7 @@ const images = [
       ))
     }
   </div>
-  <div class="swiper-button-next mySwiper-next" ></div>
+  <div class="swiper-button-next mySwiper-next"></div>
   <div class="swiper-button-prev mySwiper-prev"></div>
   <div class="swiper-pagination"></div>
 </div>
@@ -33,16 +32,16 @@ const images = [
 
 <script>
   import Swiper from "swiper";
-  import { Navigation, Pagination } from 'swiper/modules';
+  import { Navigation, Pagination } from "swiper/modules";
 
   const swiper = new Swiper(".mySwiper-slider", {
-    modules: [ Navigation, Pagination ],
+    modules: [Navigation, Pagination],
 
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
     observer: true,
-    direction: 'horizontal',
+    direction: "horizontal",
     speed: 2400,
     parallax: true,
     breakpoints: {
@@ -57,23 +56,22 @@ const images = [
       clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
-    
   });
   console.log("Swiper initialized:", swiper);
-
- 
-
 </script>
 
 <style>
   .swiper {
+    padding: 0px 50px;
     width: 91%;
     margin: 0 auto;
   }
-
+  .swiper-slide {
+    margin-right: 30px;
+  }
   .swiper-wrapper img {
     width: 100%;
   }

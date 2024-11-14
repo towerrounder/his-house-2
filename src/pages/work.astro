@@ -9,9 +9,10 @@ import InnerPageBanner from "../components/InnerPageBanner.astro";
 import Grid from "../components/Grid.astro";
 import FooterSectionGal from "../components/FooterSectionGal.astro";
 import SlickSlider from "../components/SlickSlider.astro";
+import BootstrapSlider from "../components/BootstrapSlider.astro";
 
 const projects = (await getCollection("work")).sort(
-  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 ---
 
@@ -34,7 +35,9 @@ const projects = (await getCollection("work")).sort(
       </section>
       <section>
         <div class="wrapper">
-          <SlickSlider />
+          <!-- <SlickSlider />
+            -->
+          <BootstrapSlider />
         </div>
       </section>
     </main>
@@ -61,10 +64,9 @@ const projects = (await getCollection("work")).sort(
         padding: 30px 0 !important;
       }
       section.slider-gallery h2 {
-            font-size: 32px;
-            text-align: left;
-        }
-     
+        font-size: 32px;
+        text-align: left;
+      }
     }
   </style>
 </BaseLayout>
