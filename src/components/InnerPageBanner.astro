@@ -54,7 +54,7 @@ const { align = "center", pageName, title, className, image } = Astro.props;
 
         <!-- Second Card -->
         <div class=`cols ${pageName == 'donate'? 'card-equal' : 'card-2' }`>
-            <img src={image} alt="Image Banner" />
+            <img src={image} alt="Image Banner" class="img_resp_hide" />
         </div>
     </div>
 </div>
@@ -114,5 +114,27 @@ const { align = "center", pageName, title, className, image } = Astro.props;
         font-size: 20px;
         font-weight: 400;
         margin-top: 0.5rem;
+    }
+    @media (max-width: 48em) {
+      .img_resp_hide {
+        display: none;
+      }
+      .inner-page-banner .cols {
+          width: 100%;
+          padding: 0 !important;
+      }
+
+      .inner-page-banner {
+          padding: 0 !important;
+          flex-direction: column;
+      }
+      .inner-page-banner h1 {
+            font-size: 40px;
+        }
+        section.slider-gallery h2 {
+            font-size: 32px;
+            text-align: left;
+        }
+     
     }
 </style>

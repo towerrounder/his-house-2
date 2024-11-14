@@ -20,6 +20,25 @@ import Pill from "../components/Pill.astro";
     </div>
   </div>
 </div>
+<div class="our-mission mobile">
+  <img src="/public/assets/10011158a3dd0ffbf97e563f1142c41a.jpeg" alt="" />
+  <!-- Blue Box with Mission Content -->
+  <div class="content-box">
+    <h2>Join Us in Our Journey</h2>
+    <p>
+      Each image in our gallery reflects His House's mission to cherish and care
+      for the elderly and vulnerable. As we continue this journey of compassion,
+      we invite you to be part of our story. Your support, whether through a
+      donation or by reaching out, helps us provide a loving home for those in
+      need. Together, we can make a lasting difference in their lives.
+    </p>
+    <p>Contact us or donate today to join us in fulfilling this mission.</p>
+    <div class="roles">
+      <Pill href="/contact" type="contact">Contact Us</Pill>
+      <Pill href="/donate" type="donate">Donate</Pill>
+    </div>
+  </div>
+</div>
 <style>
   .roles {
     gap: 30px;
@@ -100,5 +119,37 @@ import Pill from "../components/Pill.astro";
 
   .secondary-btn:hover {
     background-color: #001f4d; /* Darker blue on hover */
+  }
+  @media (min-width: 48em) {
+    .our-mission.mobile {
+      display: none;
+    }
+  }
+  @media (max-width: 48em) {
+    .our-mission {
+      display: none;
+    }
+
+    .our-mission.mobile {
+      display: block;
+    }
+    .our-mission.mobile {
+      background: transparent;
+      padding: 0;
+      height: auto;
+    }
+
+    .our-mission.mobile .content-box {
+      margin: 0;
+      max-width: 100% !important;
+      margin-top: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .our-mission.mobile img {
+      margin-bottom: 0 !important;
+      display: block;
+    }
   }
 </style>

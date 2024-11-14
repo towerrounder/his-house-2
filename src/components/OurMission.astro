@@ -25,6 +25,31 @@ import Pill from "../components/Pill.astro";
     </div>
   </div>
 </div>
+<div class="our-mission mobile">
+  <img src="/public/assets/5fa06bf85b8df5d73c8f2ff40bea2231.jpeg" alt="" />
+  
+  <div class="content-box">
+    <h2>Our Mission</h2>
+    <p>
+      At His House Care Centre, our mission is to create a homely, loving
+      environment where the elderly and vulnerable are cared for with respect
+      and dignity. We strive to provide the highest standard of care, in line
+      with health and safety guidelines, and to support families by offering
+      quality in-home care for their frail loved ones.
+    </p>
+    <p>
+      We are committed to training and empowering Namibians to become skilled
+      caregivers, working alongside medical professionals to ensure excellent
+      care. Guided by our faith, we seek to fulfill our calling to serve those
+      in need, trusting in and praising our Lord Jesus Christ.
+    </p>
+    <div class="roles">
+      <Pill href="/contact" type="contact">Contact Us</Pill>
+      <Pill href="/donate" type="donate">Donate</Pill>
+    </div>
+  </div>
+</div>
+
 <style>
   .roles {
     gap: 30px;
@@ -104,5 +129,37 @@ import Pill from "../components/Pill.astro";
 
   .secondary-btn:hover {
     background-color: #001f4d; /* Darker blue on hover */
+  }
+  @media (min-width: 48em) {
+    .our-mission.mobile {
+      display: none;
+    }
+  }
+  @media (max-width: 48em) {
+    .our-mission {
+      display: none;
+    }
+
+    .our-mission.mobile {
+      display: block;
+    }
+    .our-mission.mobile {
+      background: transparent;
+      padding: 0;
+      height: auto;
+    }
+
+    .our-mission.mobile .content-box {
+      margin: 0;
+      max-width: 100% !important;
+      margin-top: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .our-mission.mobile img {
+      margin-bottom: 0 !important;
+      display: block;
+    }
   }
 </style>

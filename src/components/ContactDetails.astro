@@ -16,8 +16,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
     position: relative;
     width: 100%;
     height: 450px;
-    background: url("/public/assets/Captura\ de\ ecrã\ 2024-10-08\,\ às\ 14.22.32\ 1.png")
-      center center/cover no-repeat;
+    background: url("/public/assets/contact.png") center center/cover no-repeat;
     display: flex;
 
     align-items: center;
@@ -71,13 +70,69 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
     color: #2f3396;
     text-decoration: underline;
   }
-
+  @media (min-width: 48em) {
+    .contact-section.mobile {
+      display: none;
+    }
+  }
+  @media (max-width: 48em) {
+    .contact-section.mobile img {
+      width: 100%;
+      display: block;
+    }
+    .contact-section {
+      display: none;
+    }
+    .contact-section.mobile {
+      display: block;
+      height: auto;
+      margin: 40px 0;
+      position: static;
+      background: transparent;
+    }
+    .overlay-box {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+      box-shadow: none;
+      border: 1px solid #dfdfdf;
+      border-radius: 0;
+      height: auto;
+    }
+  }
   /* .contact-details a:hover {
     text-decoration: underline;
   } */
 </style>
 
 <div class="contact-section">
+  <!-- Overlay Box -->
+  <div class="overlay-box">
+    <h2>{heading}</h2>
+    <p>{description}</p>
+    <div class="contact-details">
+      <div>
+        <i class="fas fa-phone"></i>
+        <a href={`tel:${phone}`}>{phone}</a>
+      </div>
+      <div>
+        <i class="fas fa-fax"> </i>
+        <a href={`tel:${fax}`}>{fax}</a>
+      </div>
+
+      <div>
+        <i class="fas fa-map-marker-alt"></i>
+        <a href="#">{address}</a>
+      </div>
+      <div>
+        <i class="fas fa-envelope"></i>
+        <a href={`mailto:${email}`}>{email}</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="contact-section mobile">
+  <img src="/public/assets/map-mobile.png" alt="Map" />
   <!-- Overlay Box -->
   <div class="overlay-box">
     <h2>{heading}</h2>

@@ -11,22 +11,11 @@ import FooterSectionGal from "../components/FooterSectionGal.astro";
 import SlickSlider from "../components/SlickSlider.astro";
 
 const projects = (await getCollection("work")).sort(
-  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
 ---
 
 <BaseLayout title="Our Gallery" description="His House Care Center">
-  <style>
-    .banner-top {
-      padding: 100px 0;
-      background-color: var(--gray-900);
-    }
-    .slider-gallery h2 {
-      font-family: "Satoshi regular";
-      margin-top: 100px;
-      margin-top: 25px;
-    }
-  </style>
   <div class="stack gap-20">
     <main class="stack gap-8">
       <div class="banner-top">
@@ -39,7 +28,7 @@ const projects = (await getCollection("work")).sort(
         </div>
       </div>
       <section class="slider-gallery">
-        <div class="container">
+        <div class="wrapper">
           <h2 class="text-center">Moments of Compassion and Community</h2>
         </div>
       </section>
@@ -54,4 +43,28 @@ const projects = (await getCollection("work")).sort(
   <section>
     <FooterSectionGal />
   </section>
+  <style>
+    .banner-top {
+      padding: 100px 0;
+      background-color: var(--gray-900);
+    }
+    .slider-gallery h2 {
+      font-family: "Satoshi regular";
+      margin-top: 100px;
+      margin-top: 25px;
+    }
+    @media (max-width: 48em) {
+      .img_resp_hide {
+        display: none;
+      }
+      .banner-top {
+        padding: 30px 0 !important;
+      }
+      section.slider-gallery h2 {
+            font-size: 32px;
+            text-align: left;
+        }
+     
+    }
+  </style>
 </BaseLayout>

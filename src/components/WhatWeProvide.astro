@@ -23,32 +23,36 @@
         src="/public/assets/whatweprowide/sectionone/twin-bed_16965126 1.png"
         alt="Image 1 description"
       />
-      <h5>Double Room with En-suite</h5>
-      <p>
-        Perfect for couples or those preferring companionship, our double rooms
-        are spacious, equipped with modern en-suite facilities for privacy and
-        comfort.
-      </p>
+      <div>
+        <h5>Double Room with En-suite</h5>
+        <p>
+          Perfect for couples or those preferring companionship, our double
+          rooms are spacious, equipped with modern en-suite facilities for
+          privacy and comfort.
+        </p>
+      </div>
     </div>
     <div class="small-card">
       <img
         src="/public/assets/whatweprowide/sectionone/single-bed_10332249 1.png"
         alt="Image 2 description"
       />
-      <h5>Single Room with En-suite</h5>
-      <p>
-        For residents who value privacy, our single rooms offer a tranquil
-        retreat with essential amenities and en-suite bathrooms, ensuring a
-        comfortable and dignified stay.
-      </p>
+      <div>
+        <h5>Single Room with En-suite</h5>
+        <p>
+          For residents who value privacy, our single rooms offer a tranquil
+          retreat with essential amenities and en-suite bathrooms, ensuring a
+          comfortable and dignified stay.
+        </p>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- </div> -->
-<div class="frail-care-inner">
+<div class="frail-care-inner assisted">
   <!-- First Card: Large with Heading and Paragraph -->
-  <div class="card large-card">
+  <div class="card large-card mt-3">
     <h3>Assisted Living</h3>
     <p>For those seeking independence with a level of support:</p>
   </div>
@@ -60,16 +64,18 @@
         src="/public/assets/whatweprowide/sectiontwo/home_3364958 1.png"
         alt="Image 1 description"
       />
-      <h5>Private Flat</h5>
-      <p>
-        Designed for residents who live independently but require assistance
-        with daily activities. These flats provide a private, home-like
-        environment within a supportive community.
-      </p>
+      <div>
+        <h5>Private Flat</h5>
+        <p>
+          Designed for residents who live independently but require assistance
+          with daily activities. These flats provide a private, home-like
+          environment within a supportive community.
+        </p>
+      </div>
     </div>
   </div>
 </div>
-<div class="frail-care-inner">
+<div class="frail-care-inner respite">
   <!-- First Card: Large with Heading and Paragraph -->
   <div class="card large-card">
     <h3>Respite Care</h3>
@@ -77,29 +83,33 @@
   </div>
 
   <!-- Second Card: Contains Two Smaller Cards with Image, Heading, and Paragraph -->
-  <div class="card small-cards">
+  <div class="card small-cards consultation">
     <div class="small-card">
       <img
         src="/public/assets/whatweprowide/sectionthree/old_2512436 1.png"
         alt="Image 1 description"
       />
-      <h5>Consultations</h5>
+      <div>
+        <h5>Consultations</h5>
       <p>
         Consultations on the care of the elderly, offering guidance and
         personalised care plans.
       </p>
+      </div>
     </div>
-    <div class="small-card">
+    <div class="small-card rental">
       <img
         src="/public/assets/whatweprowide/sectionthree/wheelchair_2924412 1.png"
         alt="Image 2 description"
       />
-      <h5>Rental</h5>
+      <div>
+        <h5>Rental</h5>
       <p>
         Rental of hospital beds, wheelchairs, and other assistive devices to
         support the mobility and comfort of our residents and those cared for at
         home.
       </p>
+      </div>
     </div>
   </div>
 </div>
@@ -164,5 +174,56 @@
       font-weight: 700;
       margin-bottom: 1.3rem;
     }
+    .container-head {
+      margin-bottom: 0;
+    }
+    .frail-care-inner {
+      flex-direction: column;
+    }
+    .frail-care-inner .card {
+      padding: 0;
+      max-width: 100%;
+    }
+    .frail-care-inner .card.large-card p {
+      width: 100% !important;
+    }
+    .frail-care-inner .card h3 {
+      /* font-family: 'Satoshi regular'; */
+      font-size: 24px;
+      margin-bottom: 0.8em;
+      line-height: 31.2px;
+    }
+    .frail-care-inner .card.small-cards {
+      flex-direction: column;
+    }
+    .small-card {
+      width: 100% !important;
+      padding: 0;
+      display: flex;
+      align-items: flex-start;
+    }
+    .small-card img {
+      margin-right: 20px;
+      margin-bottom: 0 !important;
+    }
+    .frail-care-inner.assisted h3 {
+      margin-top: 50px;
+    }
+    .frail-care-inner.respite {
+      margin-top: 3rem;
+    }
+
+.frail-care-inner h5 {
+    font-size: 20px;
+    margin-bottom: 0.8rem;
+}
+
+.rental, .consultation {
+    margin-top: 20px;
+}
+
+.small-card.single {
+    margin-top: 14px;
+}
   }
 </style>

@@ -20,6 +20,25 @@ import Pill from "../components/Pill.astro";
     </p>
   </div>
 </div>
+<div class="our-mission mobile">
+  <img src="/public/assets/5fa06bf85b8df5d73c8f2ff40bea2231.jpeg" alt="" />
+  <!-- Blue Box with Mission Content -->
+  <div class="content-box">
+    <h2>How does your donation help us?</h2>
+    <p>
+      Donations directly support essential services like 24-hour care, medical
+      assistance, and facility maintenance, while helping us adapt to the
+      changing needs of our community. Your support fosters compassion and
+      solidarity, showing our residents and staff they are not alone.
+    </p>
+    <p>
+      Each contribution signifies trust in our mission and a shared commitment
+      to improving lives. Together, we can make a lasting impact and spread
+      hope. Thank you for considering a donation to His House Care Centre—your
+      kindness is the foundation of our work.
+    </p>
+  </div>
+</div>
 <style>
   .roles {
     gap: 30px;
@@ -99,5 +118,37 @@ import Pill from "../components/Pill.astro";
 
   .secondary-btn:hover {
     background-color: #001f4d; /* Darker blue on hover */
+  }
+  @media (min-width: 48em) {
+    .our-mission.mobile {
+      display: none;
+    }
+  }
+  @media (max-width: 48em) {
+    .our-mission {
+      display: none;
+    }
+
+    .our-mission.mobile {
+      display: block;
+    }
+    .our-mission.mobile {
+      background: transparent;
+      padding: 0;
+      height: auto;
+    }
+
+    .our-mission.mobile .content-box {
+      margin: 0;
+      max-width: 100% !important;
+      margin-top: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .our-mission.mobile img {
+      margin-bottom: 0 !important;
+      display: block;
+    }
   }
 </style>

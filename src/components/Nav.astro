@@ -1,45 +1,64 @@
 ---
-
-import type { iconPaths } from './IconPaths';
-import CallToAction from './CallToAction.astro';
-import { Image } from 'astro:assets';
-import logo from '../../public/assets/logo.svg'; // Path to your image
-import BarIcon from '../../public/assets/bar.svg'; // Path to your image
+import type { iconPaths } from "./IconPaths";
+import CallToAction from "./CallToAction.astro";
+import { Image } from "astro:assets";
+import logo from "../../public/assets/logo.svg"; // Path to your image
+import BarIcon from "../../public/assets/bar.svg"; // Path to your image
+import CloseIcon from "../../public/assets/close-nav.svg"; // Path to your image
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Gallery', href: '/work/' },
-	{ label: 'Donate', href: '/donate/' },
-	{ label: 'Contact', href: '/contact-us/' },
+	{ label: "Home", href: "/" },
+	{ label: "Gallery", href: "/work/" },
+	{ label: "Donate", href: "/donate/" },
+	{ label: "Contact", href: "/contact-us/" },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
-	{ label: 'Twitter', href: 'https://twitter.com/me', icon: 'twitter-logo' },
-	{ label: 'Twitch', href: 'https://twitch.tv/me', icon: 'twitch-logo' },
-	{ label: 'GitHub', href: 'https://github.com/me', icon: 'github-logo' },
-	{ label: 'CodePen', href: 'https://codepen.io/me', icon: 'codepen-logo' },
-	{ label: 'dribbble', href: 'https://dribbble.com/me', icon: 'dribbble-logo' },
-	{ label: 'YouTube', href: 'https://www.youtube.com/@me/', icon: 'youtube-logo' },
+const iconLinks: {
+	label: string;
+	href: string;
+	icon: keyof typeof iconPaths;
+}[] = [
+	{ label: "Twitter", href: "https://twitter.com/me", icon: "twitter-logo" },
+	{ label: "Twitch", href: "https://twitch.tv/me", icon: "twitch-logo" },
+	{ label: "GitHub", href: "https://github.com/me", icon: "github-logo" },
+	{ label: "CodePen", href: "https://codepen.io/me", icon: "codepen-logo" },
+	{
+		label: "dribbble",
+		href: "https://dribbble.com/me",
+		icon: "dribbble-logo",
+	},
+	{
+		label: "YouTube",
+		href: "https://www.youtube.com/@me/",
+		icon: "youtube-logo",
+	},
 ];
 ---
 
 <nav>
 	<div class="menu-header">
 		<a href="/" class="site-title">
-			<Image src={logo} alt="Logo"  />
-
+			<Image src={logo} alt="Logo" />
 		</a>
 		<menu-button>
 			<template>
 				<button class="menu-button" aria-expanded="false">
 					<span class="sr-only">Menu</span>
-					<Image src={BarIcon} alt="Logo"  />
-
+					<Image
+						src={BarIcon}
+						alt="Open Menu"
+						class="icon bar-icon"
+					/>
+					<Image
+						src={CloseIcon}
+						alt="Close Menu"
+						class="icon close-icon"
+					/>
 				</button>
 			</template>
-		</menu-button> 
+		</menu-button>
 	</div>
 	<noscript>
 		<ul class="nav-items">
@@ -49,11 +68,14 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 						<a
 							aria-current={Astro.url.pathname === href}
 							class:list={[
-								'link',
+								"link",
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										(href !== "/" &&
+											Astro.url.pathname.startsWith(
+												href,
+											)),
 								},
 							]}
 							href={href}
@@ -73,7 +95,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 						<a href={href} class="social">
 							<span class="sr-only">{label}</span>
 							{/* <logo src={icon} /> */}
-							<Image src={logo} alt="Logo"  />
+							<Image src={logo} alt="Logo" />
 						</a>
 					))
 				}
@@ -88,11 +110,14 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 						<a
 							aria-current={Astro.url.pathname === href}
 							class:list={[
-								'link',
+								"link",
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										(href !== "/" &&
+											Astro.url.pathname.startsWith(
+												href,
+											)),
 								},
 							]}
 							href={href}
@@ -104,11 +129,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			}
 		</ul>
 		<div class="menu-footer">
-			
-			<a href="/contact" class="btn-contact">
-					Contact Us
-			</a>
-			
+			<a href="/contact" class="btn-contact"> Contact Us </a>
 		</div>
 	</div>
 </nav>
@@ -117,44 +138,44 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	class MenuButton extends HTMLElement {
 		constructor() {
 			super();
-
-			// Inject menu toggle button when JS runs.
-			this.appendChild(this.querySelector('template')!.content.cloneNode(true));
-			const btn = this.querySelector('button')!;
-
-			// Hide menu (shown by default to support no-JS browsers).
-			const menu = document.getElementById('menu-content')!;
+			this.appendChild(
+				this.querySelector("template")!.content.cloneNode(true),
+			);
+			const btn = this.querySelector("button")!;
+			const menu = document.getElementById("menu-content")!;
 			menu.hidden = true;
-			// Add "menu-content" class in JS to avoid covering content in non-JS browsers.
-			menu.classList.add('menu-content');
+			menu.classList.add("menu-content");
 
-			/** Set whether the menu is currently expanded or collapsed. */
-			const setExpanded = (expand: boolean) => {
-				btn.setAttribute('aria-expanded', expand ? 'true' : 'false');
+			const setExpanded = (expand) => {
+				btn.setAttribute("aria-expanded", expand ? "true" : "false");
 				menu.hidden = !expand;
+				if (expand) {
+					btn.classList.add("menu-open");
+				} else {
+					btn.classList.remove("menu-open");
+				}
 			};
 
-			// Toggle menu visibility when the menu button is clicked.
-			btn.addEventListener('click', () => setExpanded(menu.hidden));
+			btn.addEventListener("click", () => setExpanded(menu.hidden));
 
-			// Hide menu button for large screens.
-			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
+			const handleViewports = (e) => {
 				setExpanded(e.matches);
 				btn.hidden = e.matches;
 			};
-			const mediaQueries = window.matchMedia('(min-width: 50em)');
+			const mediaQueries = window.matchMedia("(min-width: 50em)");
 			handleViewports(mediaQueries);
-			mediaQueries.addEventListener('change', handleViewports);
+			mediaQueries.addEventListener("change", handleViewports);
 		}
 	}
-	customElements.define('menu-button', MenuButton);
+
+	customElements.define("menu-button", MenuButton);
 </script>
 
 <style>
-	.btn-contact{
+	.btn-contact {
 		background-color: var(--theme-btn);
 		color: white;
-		padding:0.75rem 1rem;
+		padding: 0.75rem 1rem;
 		border-radius: 4px;
 		text-decoration: none;
 		font-family: var(--font-brand);
@@ -162,7 +183,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	nav {
 		z-index: 9999;
 		position: relative;
-		font-family: 'Satoshi light';
+		font-family: "Satoshi light";
 		font-weight: 500;
 		/* margin-bottom: 3.5rem; */
 		background-color: var(--gray-999);
@@ -196,10 +217,10 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		/* box-shadow: var(--shadow-md); */
 	}
 
-	.menu-button[aria-expanded='true'] {
+	.menu-button[aria-expanded="true"] {
 		color: var(--gray-0);
 		/* background: linear-gradient(180deg, var(--gray-600), transparent), */
-			/* radial-gradient(var(--gray-900), var(--gray-800) 150%); */
+		/* radial-gradient(var(--gray-900), var(--gray-800) 150%); */
 	}
 
 	.menu-button[hidden] {
@@ -211,9 +232,9 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		inset: -1px;
 		content: '';
 		/* background: var(--gradient-stroke); */
-		/* border-radius: 999rem; */
-		z-index: -1;
-	} */
+	/* border-radius: 999rem; */
+	/* z-index: -1; */
+	/* } */
 
 	.menu-content {
 		/* position: absolute; */
@@ -237,18 +258,18 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		color: var(--accent-light);
 		font-weight: 200;
 		text-decoration: none;
-		font-family: 'Satoshi regular';
+		font-family: "Satoshi regular";
 		border-bottom: 1px solid transparent;
 	}
 	.link:hover,
-		.link:focus {
-			border-bottom: 1px solid #202371;
-			/* background-color: var(--accent-subtle-overlay); */
-		}
+	.link:focus {
+		border-bottom: 1px solid #202371;
+		/* background-color: var(--accent-subtle-overlay); */
+	}
 	.link.active {
 		color: var(--accent-dark);
 		font-weight: 600;
-		font-family: 'Satoshi';
+		font-family: "Satoshi";
 	}
 
 	.menu-footer {
@@ -289,6 +310,21 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		align-items: center;
 		height: calc(var(--icon-size) + 2 * var(--icon-padding));
 	}
+	.icon {
+		display: none; /* Hide both icons by default */
+	}
+
+	.menu-button .bar-icon {
+		display: inline; /* Display the bar icon by default */
+	}
+
+	.menu-button.menu-open .bar-icon {
+		display: none; /* Hide the bar icon when menu is open */
+	}
+
+	.menu-button.menu-open .close-icon {
+		display: inline; /* Show the close icon when menu is open */
+	}
 
 	@media (min-width: 50em) {
 		nav {
@@ -325,7 +361,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		.nav-items::before {
 			position: absolute;
 			inset: -1px;
-			content: '';
+			content: "";
 			/* background: var(--gradient-stroke); */
 			/* border-radius: 999rem; */
 			z-index: -1;
@@ -334,7 +370,6 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		.link {
 			padding: 0.5rem 1rem;
 			/* border-radius: 999rem; */
-
 		}
 
 		.link:hover,
@@ -373,6 +408,26 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	@media (forced-colors: active) {
 		.link.active {
 			color: SelectedItem;
+		}
+	}
+	@media (max-width: 48em) {
+		.menu-footer {
+			box-shadow: none ! IMPORTANT;
+		}
+		ul.nav-items {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			padding-left: 23px;
+		}
+
+		ul.nav-items a {
+			font-size: 45px;
+		}
+		.menu-footer a {
+			width: 100%;
+			text-align: center;
+			
 		}
 	}
 </style>
