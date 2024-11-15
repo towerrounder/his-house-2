@@ -27,7 +27,7 @@ import PillGallery from "../components/PillGallery.astro";
 
   <!-- Center Section -->
   <div class="gallery-center">
-    <div class="head">{title}</div>
+    <h2>{title}</h2>
     <div>
       <p>
         His House Care Centre, a non-profit organisation, was founded in 2005.
@@ -100,8 +100,8 @@ import PillGallery from "../components/PillGallery.astro";
   .gallery {
     display: flex;
     justify-content: space-between; /* Distribute sections evenly */
-    gap: 2rem;
-    align-items: flex-start;
+    gap: 1.25rem;
+    align-items: center;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
   }
 
@@ -109,7 +109,7 @@ import PillGallery from "../components/PillGallery.astro";
   .gallery-left {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 8px;
     flex: 1;
   }
 
@@ -139,7 +139,7 @@ import PillGallery from "../components/PillGallery.astro";
   .gallery-right {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 8px;
     flex: 1;
   }
 
@@ -166,21 +166,24 @@ import PillGallery from "../components/PillGallery.astro";
 
   /* Center Section Styling */
   .gallery-center {
-    flex: 2; /* Take up more space */
-    max-width: 600px;
+    display: flex;
+    row-gap: 15px;
+    flex: 2;
+    max-width: 500px;
     text-align: center;
+    flex-direction: column;
   }
 
-  .head {
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 56px;
+  .gallery-center h2 {
+    font-family: "Satoshi regular";
+    font-size: 50px;
+    font-weight: 900;
   }
 
   .gallery-center p {
     text-align: start;
     font-size: 18px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .roles {
@@ -224,6 +227,16 @@ import PillGallery from "../components/PillGallery.astro";
     }
     .roles {
       justify-content: flex-start;
+    }
+    .gallery-center h2 {
+      text-align: left;
+      font-size: 32px;
+      line-height: 40px;
+
+      margin-bottom: 1.3rem;
+      font-family: "Satoshi regular";
+
+      font-weight: 900;
     }
   }
 </style>

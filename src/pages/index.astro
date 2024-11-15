@@ -47,8 +47,8 @@ const projects = (await getCollection("work"))
       </Hero>
     </header>
   </div>
-  <div class="stack gap-20 lg:gap-48">
-    <main class="wrapper stack gap-20 lg:gap-48">
+  <div class="stack gap-20 lg:gap-20">
+    <main class="wrapper stack gap-20 lg:gap-20">
       <section class="section with-background with-cta">
         <div class="gallery">
           <Gallery title="Welcome to His House Care Centre" description=" " />
@@ -56,7 +56,7 @@ const projects = (await getCollection("work"))
       </section>
     </main>
     <section class="whatweprovide">
-      <main class="wrapper stack gap-20 lg:gap-48">
+      <main class="wrapper stack gap-20 lg:gap-20">
         <div>
           <WhatWeProvide />
         </div>
@@ -64,7 +64,7 @@ const projects = (await getCollection("work"))
     </section>
 
     <section>
-      <main class="wrapper stack gap-20 lg:gap-48">
+      <main class="wrapper stack gap-20 lg:gap-20">
         <div>
           <BehindTheWheel />
         </div>
@@ -111,6 +111,9 @@ const projects = (await getCollection("work"))
         background-repeat: no-repeat;
         background-position: center;
       }
+      /* .card .small-card h5 {
+        font-size: 20px;
+      } */
     }
     @media (min-width: 50em) {
       .hero {

@@ -7,11 +7,15 @@ import Pill from "../components/Pill.astro";
   <div class="content-box">
     <h2>Our Mission</h2>
     <p>
-      At His House Care Centre, our mission is to create a homely, loving
-      environment where the elderly and vulnerable are cared for with respect
-      and dignity. We strive to provide the highest standard of care, in line
-      with health and safety guidelines, and to support families by offering
-      quality in-home care for their frail loved ones.
+      At His House Care Centre, our mission is to <span class="st-italic"
+        >create a homely, loving environment
+      </span> where the elderly and vulnerable are cared for with <span
+        class="st-italic"
+        >respect and dignity.
+      </span>
+      We strive to provide the highest standard of care, in line with health and
+      safety guidelines, and to support families by offering quality in-home care
+      for their frail loved ones.
     </p>
     <p>
       We are committed to training and empowering Namibians to become skilled
@@ -31,11 +35,15 @@ import Pill from "../components/Pill.astro";
   <div class="content-box">
     <h2>Our Mission</h2>
     <p>
-      At His House Care Centre, our mission is to create a homely, loving
-      environment where the elderly and vulnerable are cared for with respect
-      and dignity. We strive to provide the highest standard of care, in line
-      with health and safety guidelines, and to support families by offering
-      quality in-home care for their frail loved ones.
+      At His House Care Centre, our mission is to <span class="st-italic"
+        >create a homely, loving environment
+      </span> where the elderly and vulnerable are cared for with <span
+        class="st-italic"
+        >respect and dignity.
+      </span>
+      We strive to provide the highest standard of care, in line with health and
+      safety guidelines, and to support families by offering quality in-home care
+      for their frail loved ones.
     </p>
     <p>
       We are committed to training and empowering Namibians to become skilled
@@ -51,6 +59,10 @@ import Pill from "../components/Pill.astro";
 </div>
 
 <style>
+  .st-italic {
+    font-style: italic;
+    font-weight: bold;
+  }
   .roles {
     gap: 30px;
     display: flex;
@@ -88,11 +100,14 @@ import Pill from "../components/Pill.astro";
     color: white;
     font-size: 2.2rem;
     margin-bottom: 1rem;
-    font-weight: bold;
+
+    font-family: "Satoshi regular";
+    font-weight: 900;
   }
 
   /* Paragraph Styling */
   .content-box p {
+    font-family: "Satoshi regular";
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.2rem;

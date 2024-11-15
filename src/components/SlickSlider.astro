@@ -60,19 +60,21 @@ const images = [
       prevEl: ".swiper-button-prev",
     },
   });
-  console.log("Swiper initialized:", swiper);
 </script>
 
 <style>
   .swiper {
-    padding: 0px 50px;
     width: 91%;
-    margin: 0 auto;
+    margin-bottom: 90px;
   }
-  .swiper-slide {
-    margin-right: 30px;
-  }
+
   .swiper-wrapper img {
     width: 100%;
+  }
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: var(--swiper-pagination-bottom, -5px);
   }
 </style>
