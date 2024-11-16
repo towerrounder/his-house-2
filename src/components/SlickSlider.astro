@@ -8,10 +8,10 @@ const images = [
   "/public/assets/sliderimages/562bc84c2c1ae33b794180f3a2d8718e.jpeg",
   "/public/assets/sliderimages/PortraitCard.png",
   "/public/assets/sliderimages/3cd72364f18fa9b0ac1c25c967e1d3e9.jpeg",
-  "/public/assets/sliderimages/PortraitCard.png",
-  "/public/assets/sliderimages/PortraitCard.png",
 ];
 ---
+<div class="custom-wrapper">
+
 
 <div class="swiper mySwiper-slider">
   <div class="swiper-wrapper">
@@ -23,11 +23,12 @@ const images = [
       ))
     }
   </div>
-  <div class="swiper-button-next mySwiper-next"></div>
+  
+</div>
+<div class="swiper-button-next mySwiper-next"></div>
   <div class="swiper-button-prev mySwiper-prev"></div>
   <div class="swiper-pagination"></div>
 </div>
-
 <!-- Initialize the Slick slider after DOMContentLoaded -->
 
 <script>
@@ -39,7 +40,7 @@ const images = [
 
     slidesPerView: 1,
     spaceBetween: 30,
-    loop: true,
+    // loop: true,
     observer: true,
     direction: "horizontal",
     speed: 2400,
@@ -59,12 +60,12 @@ const images = [
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-  });
+  }); 
 </script>
 
 <style>
   .swiper {
-    width: 91%;
+    width: 90%;
     margin-bottom: 90px;
   }
 
@@ -77,4 +78,19 @@ const images = [
   .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: var(--swiper-pagination-bottom, -5px);
   }
+
+  .custom-wrapper {
+      position: relative;
+  }
+  .custom-wrapper img {
+      height: 500px;
+      object-fit: cover;
+  }
+
+
+  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+      bottom: -40px;
+  }
+
+ 
 </style>

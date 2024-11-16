@@ -325,5 +325,26 @@ h5 {
   font-style: italic;
   font-weight: bold;
 }
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #2F3396 !important;
+  width: 20px;
+  height: 20px;
+}
+
+span.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 3px solid #5562B0;
+  opacity: 1;
+}
+.swiper-button-next:after {
+  content: url(/public/assets/angle-right.svg) !important;
+}
+.swiper-button-prev:after {
+  content: url(/public/assets/angle-right.svg) !important;
+  transform: rotate(-180deg);
+
+}
 @media (max-width: 48em) {
 }

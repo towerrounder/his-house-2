@@ -107,7 +107,7 @@ const {
     .contact-container {
       flex-direction: column;
     }
-    .main-form-section{
+    .main-form-section {
       width: 100%;
     }
     .form-section {
@@ -128,7 +128,7 @@ const {
   <div class="main-form-section">
     <div class="form-section">
       <h2>Send us a message</h2>
-      <form>
+      <form id="contact-form">
         <!-- Name & Surname -->
         <div class="form-group">
           <label for="name">Name & Surname</label>
@@ -137,8 +137,9 @@ const {
             id="name"
             name="name"
             placeholder="Your full name"
-            required
+            
           />
+          <span class="error-message"></span>
         </div>
 
         <!-- Phone Number -->
@@ -149,8 +150,9 @@ const {
             id="phone"
             name="phone"
             placeholder="Your phone number"
-            required
+            
           />
+          <span class="error-message"></span>
         </div>
 
         <!-- Email Address -->
@@ -161,8 +163,9 @@ const {
             id="email"
             name="email"
             placeholder="Your email address"
-            required
+            
           />
+          <span class="error-message"></span>
         </div>
 
         <!-- Message -->
@@ -173,7 +176,8 @@ const {
             name="message"
             rows="4"
             placeholder="Your message"
-            required></textarea>
+            ></textarea>
+          <span class="error-message"></span>
         </div>
 
         <!-- Submit Button -->
@@ -182,3 +186,75 @@ const {
     </div>
   </div>
 </div>
+<script is:client>
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    let isValid = true;
+
+    // Validate all input fields
+    document
+      .querySelectorAll("#contact-form input, #contact-form textarea")
+      .forEach((field) => {
+        const formGroup = field.closest(".form-group");
+        const errorMessage = formGroup.querySelector(".error-message");
+
+        if (!field.value.trim()) {
+          formGroup.classList.add("invalid");
+          errorMessage.textContent = "This field is required";
+          isValid = false;
+        } else {
+          formGroup.classList.remove("invalid");
+          errorMessage.textContent = "";
+        }
+      });
+
+    // If all fields are valid, submit the form
+    if (isValid) {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      // Use a library like @astrojs/netlify-forms for form submission
+      // or implement your own submission logic
+      console.log(data);
+    }
+  });
+</script>
+
+<style>
+  .form-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .form-group input:invalid,
+  .form-group textarea:invalid {
+    /* border: 2px solid red; */
+  }
+  
+  .error-message::before{
+    content: url('/public/assets/exclamation-circle.svg');
+    margin-right: 5px;
+  }
+  .error-message {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    color: #FF000D;
+    font-size: 12px;
+    visibility: hidden;
+    font-family: 'Satoshi regular';
+    font-weight: 600;
+  }
+
+  .form-group.invalid .error-message {
+    visibility: visible;
+  }
+
+  .form-group.invalid input,
+  .form-group.invalid textarea {
+    border: 2px solid #FF000D;
+  }
+</style>
