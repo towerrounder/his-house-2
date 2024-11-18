@@ -10,22 +10,20 @@ const images = [
   "/public/assets/sliderimages/3cd72364f18fa9b0ac1c25c967e1d3e9.jpeg",
 ];
 ---
+
 <div class="custom-wrapper">
-
-
-<div class="swiper mySwiper-slider">
-  <div class="swiper-wrapper">
-    {
-      images.map((image) => (
-        <div class="swiper-slide">
-          <img src={image} alt="Slider" />
-        </div>
-      ))
-    }
+  <div class="swiper mySwiper-slider">
+    <div class="swiper-wrapper">
+      {
+        images.map((image) => (
+          <div class="swiper-slide">
+            <img src={image} alt="Slider" />
+          </div>
+        ))
+      }
+    </div>
   </div>
-  
-</div>
-<div class="swiper-button-next mySwiper-next"></div>
+  <div class="swiper-button-next mySwiper-next"></div>
   <div class="swiper-button-prev mySwiper-prev"></div>
   <div class="swiper-pagination"></div>
 </div>
@@ -60,7 +58,7 @@ const images = [
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-  }); 
+  });
 </script>
 
 <style>
@@ -80,17 +78,14 @@ const images = [
   }
 
   .custom-wrapper {
-      position: relative;
+    position: relative;
   }
   .custom-wrapper img {
-      height: 500px;
-      object-fit: cover;
+    height: 500px;
+    object-fit: cover;
   }
-
 
   .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-      bottom: -40px;
+    bottom: -40px;
   }
-
- 
 </style>

@@ -326,7 +326,7 @@ h5 {
   font-weight: bold;
 }
 span.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #2F3396 !important;
+  background-color: #2f3396 !important;
   width: 20px;
   height: 20px;
 }
@@ -335,16 +335,38 @@ span.swiper-pagination-bullet {
   width: 20px;
   height: 20px;
   background-color: transparent;
-  border: 3px solid #5562B0;
+  border: 3px solid #2f3396;
   opacity: 1;
 }
 .swiper-button-next:after {
-  content: url(/public/assets/angle-right.svg) !important;
+  content: url(/public/assets/normal-arrow.svg) !important;
 }
 .swiper-button-prev:after {
-  content: url(/public/assets/angle-right.svg) !important;
+  content: url(/public/assets/normal-arrow.svg) !important;
   transform: rotate(-180deg);
-
 }
+/* Disabled state for next and previous buttons */
+.swiper-button-prev.swiper-button-disabled:after {
+  content: url(/public/assets/disabled-arrow.svg) !important; /* Disabled arrow */
+  /* transform: rotate(-180deg); */
+}
+.swiper-button-prev.swiper-button-disabled {
+  content: url(/public/assets/disabled-arrow.svg) !important; /* Disabled arrow */
+}
+.swiper-button-next.swiper-button-disabled:after {
+  content: url(/public/assets/disabled-arrow.svg) !important; /* Disabled arrow */
+  transform: rotate(180deg);
+}
+.swiper-button-prev:hover:after {
+  content: url(/public/assets/hover-arrow.svg) !important; /* Hover arrow */
+}
+
+.swiper-button-next:hover:after {
+  content: url(/public/assets/hover-arrow.svg) !important; /* Hover arrow */
+}
+span.swiper-pagination-bullet:hover {
+  background: #e4e9fa !important;
+}
+
 @media (max-width: 48em) {
 }

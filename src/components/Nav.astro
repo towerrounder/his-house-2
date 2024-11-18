@@ -9,7 +9,7 @@ import CloseIcon from "../../public/assets/close-nav.svg"; // Path to your image
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
-  { label: "Gallery", href: "/work/" },
+  { label: "Gallery", href: "/gallery/" },
   { label: "Donate", href: "/donate/" },
   { label: "Contact", href: "/contact-us/" },
 ];
@@ -115,7 +115,7 @@ const iconLinks: {
       }
     </ul>
     <div class="menu-footer">
-      <a href="/contact" class="btn-contact"> Contact Us </a>
+      <a href="/contact-us" class="btn-contact"> Contact Us </a>
     </div>
   </div>
 </nav>
@@ -251,6 +251,10 @@ const iconLinks: {
     border-bottom: 1px solid #202371;
     /* background-color: var(--accent-subtle-overlay); */
   }
+  .link[data-astro-cid-dmqpwcec]:hover,
+  .link[data-astro-cid-dmqpwcec]:focus {
+    color: #202371;
+  }
   .link.active {
     color: var(--accent-dark);
     font-weight: 600;
@@ -269,7 +273,9 @@ const iconLinks: {
     border-radius: 0 0 0.75rem 0.75rem;
     box-shadow: var(--shadow-lg);
   }
-
+  .menu-footer a:hover {
+    background-color: #202371;
+  }
   .socials {
     display: flex;
     flex-wrap: wrap;

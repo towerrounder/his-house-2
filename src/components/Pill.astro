@@ -26,10 +26,19 @@ const { href, type } = Astro.props;
     color: var(--theme-btn);
     background-color: var(--gray-999);
   }
+  .pill.donate a:hover {
+    color: var(--theme-btn);
+    background-color: #e4e9fa;
+  }
 
   /* Style for the "contact" type */
   .pill.contact a {
     color: var(--gray-999);
-    background-color: var(--theme-btn);
+    background-color: #2f3396;
+  }
+
+  .pill.contact a:hover {
+    color: var(--gray-999);
+    background-color: #202371;
   }
 </style>
