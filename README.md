@@ -11,8 +11,6 @@ This is a project built with [Astro](https://astro.build/), a modern static site
 3. [Running the Development Server](#running-the-development-server)
 4. [Building for Production](#building-for-production)
 5. [Deploying the Project](#deploying-the-project)
-6. [File Structure](#file-structure)
-7. [Additional Notes](#additional-notes)
 
 ---
 
@@ -34,11 +32,15 @@ Before starting, ensure you have the following installed:
    cd your-repository
 
 2. Install Dependencies: 
+    ```bash 
     Run the following command to install all necessary packages:
     npm install
 3. Running the Development Server:
+    ```bash 
     npm run dev
+
 4. Building for Production:
+    ```bash 
     npm run build
     The built files will be located in the dist/ folder.
 
