@@ -141,10 +141,11 @@ const iconLinks: {
 
       btn.addEventListener("click", () => setExpanded(menu.hidden));
 
-      const handleViewports = (e: MediaQueryListEvent) =>  {
-        setExpanded(e.matches);
-        btn.hidden = e.matches;
-      };
+      const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
+  const matches = 'matches' in e ? e.matches : (e as MediaQueryListEvent).matches;
+  setExpanded(matches);
+  btn.hidden = matches;
+};
       const mediaQueries = window.matchMedia("(min-width: 50em)");
       handleViewports(mediaQueries);
       mediaQueries.addEventListener("change", handleViewports);
