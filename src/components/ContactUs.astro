@@ -203,12 +203,20 @@ const {
   const submitButton = document.querySelector(".submit-button");
   const mainFormSection = document.querySelector(".main-form-section");
   const submitConfirm = document.querySelector(".Submit-confirm");
+  const errorMessages = document.querySelectorAll(".error-message");
 
   // Initially hide the Submit-confirm section
   submitConfirm.style.display = "none";
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission
+  // Function to update button state
+  const updateButtonState = (sending) => {
+    submitButton.textContent = sending ? "Sending..." : "Send";
+    submitButton.style.backgroundColor = sending ? "#8893D6" : "#2f3396";
+    submitButton.disabled = sending;
+  };
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
 
     let isValid = true;
 
@@ -227,68 +235,60 @@ const {
           formGroup.classList.remove("invalid");
           errorMessage.textContent = "";
         }
+
+        // Additional validation for email format
+        if (field.type === "email") {
+          const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailRegex.test(field.value)) {
+            formGroup.classList.add("invalid");
+            errorMessage.textContent = "Invalid email format";
+            isValid = false;
+          }
+        }
       });
 
     if (isValid) {
-      // Change button text and background color
-      submitButton.textContent = "Sending...";
-      submitButton.style.backgroundColor = "#8893D6";
-      submitButton.disabled = true;
+      updateButtonState(true);
 
-      // Simulate form submission process
-      setTimeout(() => {
-        // Show the Submit-confirm section and hide the main-form-section
-        mainFormSection.style.display = "none";
-        submitConfirm.style.display = "block";
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+      };
 
-        // Reset form fields (if needed)
-        form.reset();
+      try {
+        // Send form data to the DigitalOcean function endpoint
+        const endpointUrl = "https://faas-lon1-917a94a7.doserverless.co/api/v1/web/fn-202370ab-5566-4646-9ce2-699cbe01c723/default/his-house-contact-us";
+        const response = await fetch(endpointUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
 
-        // Reset button state
-        submitButton.textContent = "Send";
-        submitButton.style.backgroundColor = "#2f3396";
-        submitButton.disabled = false;
-      }, 2000); // Simulated delay (2 seconds)
+        if (response.ok) {
+          // Show the Submit-confirm section and hide the main-form-section
+          mainFormSection.style.display = "none";
+          submitConfirm.style.display = "block";
+
+          // Reset form fields
+          form.reset();
+        } else {
+          // Handle error if something goes wrong
+          errorMessages[0].textContent = "Network Error. Please try again.";
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        errorMessages[0].textContent = "Form submission failed. Please try again.";
+      } finally {
+        updateButtonState(false);
+      }
     }
   });
 </script>
 
-<!-- <script is:client>
-  const form = document.getElementById("contact-form");
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission
-
-    let isValid = true;
-
-    // Validate all input fields
-    document
-      .querySelectorAll("#contact-form input, #contact-form textarea")
-      .forEach((field) => {
-        const formGroup = field.closest(".form-group");
-        const errorMessage = formGroup.querySelector(".error-message");
-
-        if (!field.value.trim()) {
-          formGroup.classList.add("invalid");
-          errorMessage.textContent = "This field is required";
-          isValid = false;
-        } else {
-          formGroup.classList.remove("invalid");
-          errorMessage.textContent = "";
-        }
-      });
-
-    // If all fields are valid, submit the form
-    if (isValid) {
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-
-      // Use a library like @astrojs/netlify-forms for form submission
-      // or implement your own submission logic
-      console.log(data);
-    }
-  });
-</script> -->
 
 <style>
   .form-group {
