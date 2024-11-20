@@ -1,5 +1,4 @@
 ---
-import Icon from "./Icon.astro";
 const currentYear = new Date().getFullYear();
 import { Image } from "astro:assets";
 import logo from "../../public/assets/logo.svg";
@@ -23,7 +22,7 @@ import logo from "../../public/assets/logo.svg";
 
   <!-- Updated Copyright -->
   <div class="updated-copyright">
-    <p>Copyright 2024 <br /> All rights reserved to His House Care Centre</p>
+    <p>Copyright {currentYear} <br /> All rights reserved to His House Care Centre</p>
   </div>
 </footer>
 
