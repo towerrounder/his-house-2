@@ -1,6 +1,5 @@
 ---
 import type { iconPaths } from "./IconPaths";
-import CallToAction from "./CallToAction.astro";
 import { Image } from "astro:assets";
 import logo from "../../public/assets/logo.svg"; // Path to your image
 import BarIcon from "../../public/assets/bar.svg"; // Path to your image
@@ -130,7 +129,7 @@ const iconLinks: {
       menu.hidden = true;
       menu.classList.add("menu-content");
 
-      const setExpanded = (expand) => {
+      const setExpanded = (expand: boolean) => {
         btn.setAttribute("aria-expanded", expand ? "true" : "false");
         menu.hidden = !expand;
         if (expand) {
@@ -142,7 +141,7 @@ const iconLinks: {
 
       btn.addEventListener("click", () => setExpanded(menu.hidden));
 
-      const handleViewports = (e) => {
+      const handleViewports = (e: MediaQueryListEvent) =>  {
         setExpanded(e.matches);
         btn.hidden = e.matches;
       };
