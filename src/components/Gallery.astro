@@ -1,25 +1,27 @@
 ---
 const { title, description } = Astro.props;
+import image1 from "../assets/galleryimg/left/Rectangle 13.png";
+import image2 from "../assets/galleryimg/left/Rectangle 14.png";
 import PillGallery from "../components/PillGallery.astro";
 ---
 
 <div class="gallery">
   <!-- Left Section -->
   <div class="gallery-side gallery-left">
-    <img src="/public/assets/galleryimg/left/Rectangle 13.png" alt="Image 1" />
-    <img src="/public/assets/galleryimg/left/Rectangle 14.png" alt="Image 2" />
+    <img src='../assets/galleryimg/left/Rectangle 13.png' alt="Image 1" />
+    <img src="../assets/galleryimg/left/Rectangle 14.png" alt="Image 2" />
     <img
-      src="/public/assets/galleryimg/left/Rectangle 13 (1).png"
+      src="../assets/galleryimg/left/Rectangle 13 (1).png"
       alt="Image 3"
       class="img_resp_hide"
     />
     <img
-      src="/public/assets/galleryimg/left/Rectangle 14 (1).png"
+      src="../assets/galleryimg/left/Rectangle 14 (1).png"
       alt="Image 4"
       class="img_resp_hide"
     />
     <img
-      src="/public/assets/galleryimg/left/Frame 1000002674.png"
+      src="../assets/galleryimg/left/Frame 1000002674.png"
       alt="Image 5"
       class="img_resp_hide"
     />
@@ -63,32 +65,32 @@ import PillGallery from "../components/PillGallery.astro";
   <!-- Right Section -->
   <div class="gallery-side gallery-right">
     <img
-      src="/public/assets/galleryimg/right/Rectangle 13 (2).png"
+      src="../assets/galleryimg/right/Rectangle 13 (2).png"
       alt="Image 6"
       class="img_resp_hide"
     />
     <img
-      src="/public/assets/galleryimg/right/Rectangle 14 (2).png"
+      src="../assets/galleryimg/right/Rectangle 14 (2).png"
       alt="Image 7"
       class="img_resp_hide"
     />
     <img
-      src="/public/assets/galleryimg/right/Frame 1000002674 (1).png"
+      src="../assets/galleryimg/right/Frame 1000002674 (1).png"
       alt="Image 10"
       class="img_resp_hide"
     />
     <!-- <img
-      src="/public/assets/galleryimg/welcome-img-resp.png"
+      src="../assets/galleryimg/welcome-img-resp.png"
       alt="Image 10"
       class="img_desktop_hide"
     /> -->
     <img
-      src="/public/assets/galleryimg/right/9 (1).png"
+      src="../assets/galleryimg/right/9 (1).png"
       alt="Image 8"
       class="img_resp_hide"
     />
     <img
-      src="/public/assets/galleryimg/right/9 (2).png"
+      src="../assets/galleryimg/right/9 (2).png"
       alt="Image 9"
       class="img_resp_hide"
     />
