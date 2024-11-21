@@ -264,14 +264,15 @@ const {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "Authorization": "Basic NzI0MTQ2ZGUtODg1Yi00NzYwLWFjMmMtNjQyNTU4MzI5OTdiOmVUejVPVFRnRGtMTUhkMW1wdUtiaDduM2VnUnQxcVIwM0hScVZ2R25aQ1F0aHZ1dFltUVB3QXRLQmEwM1h4U2I=",
           },
           body: JSON.stringify(data),
         });
-
         if (response.ok) {
           // Show the Submit-confirm section and hide the main-form-section
           mainFormSection.style.display = "none";
           submitConfirm.style.display = "block";
+          console.log(response);
 
           // Reset form fields
           form.reset();
