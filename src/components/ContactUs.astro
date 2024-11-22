@@ -1,345 +1,313 @@
 ---
-const {
-  heading = "Contact Us",
-  paragraph = "Contacting His House Care Centre is the first step toward a meaningful connection. Whether you have questions or want to share your thoughts, our team is here to listen and respond. By filling out the form below, you're engaging with a caring community dedicated to making a difference. We appreciate your interest and look forward to hearing from you.",
-} = Astro.props;
+const { heading = "Contact Us", paragraph = "Contacting His House Care Centre is the first step toward a meaningful connection. Whether you have questions or want to share your thoughts, our team is here to listen and respond. By filling out the form below, you're engaging with a caring community dedicated to making a difference. We appreciate your interest and look forward to hearing from you." } = Astro.props;
 ---
 
 <style>
-  body {
-    font-family: "Satoshi";
-  }
+	body {
+		font-family: "Satoshi";
+	}
 
-  /* Container */
-  .contact-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    /* width: 80%; */
-    margin: 0 auto;
-    padding: 40px 0;
-    max-width: 1200px;
-    align-items: center;
-  }
+	/* Container */
+	.contact-container {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		/* width: 80%; */
+		margin: 0 auto;
+		padding: 40px 0;
+		max-width: 1200px;
+		align-items: center;
+	}
 
-  /* Content Section */
-  .content-section {
-    flex: 1;
-  }
+	/* Content Section */
+	.content-section {
+		flex: 1;
+	}
 
-  .content-heading {
-    font-size: 45px;
-    margin-bottom: 10px;
-    font-family: "Satoshi";
-  }
+	.content-heading {
+		font-size: 45px;
+		margin-bottom: 10px;
+		font-family: "Satoshi";
+	}
 
-  .content-paragraph {
-    font-size: 20px;
-    color: #555;
-  }
+	.content-paragraph {
+		font-size: 20px;
+		color: #555;
+	}
 
-  /* Form Section */
-  .form-section {
-    width: 450px;
-    border: 0.5px solid;
-    align-self: flex-start;
-    margin-left: auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-  }
+	/* Form Section */
+	.form-section {
+		width: 450px;
+		border: 0.5px solid;
+		align-self: flex-start;
+		margin-left: auto;
+		background-color: white;
+		padding: 20px;
+		border-radius: 8px;
+	}
 
-  .form-section h2 {
-    font-family: "Satoshi regular";
-    margin-bottom: 20px;
-    font-size: 26px;
-    text-align: center;
-    font-weight: 600;
-  }
+	.form-section h2 {
+		font-family: "Satoshi regular";
+		margin-bottom: 20px;
+		font-size: 26px;
+		text-align: center;
+		font-weight: 600;
+	}
 
-  /* Form Styles */
-  .form-group {
-    margin-bottom: 15px;
-  }
+	/* Form Styles */
+	.form-group {
+		margin-bottom: 15px;
+	}
 
-  .form-group label {
-    font-family: "Satoshi regular";
-    display: block;
-    font-weight: 800;
-    margin-bottom: 5px;
-  }
+	.form-group label {
+		font-family: "Satoshi regular";
+		display: block;
+		font-weight: 800;
+		margin-bottom: 5px;
+	}
 
-  .form-group input,
-  .form-group textarea {
-    font-weight: 500;
-    font-family: "Satoshi regular";
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
+	.form-group input,
+	.form-group textarea {
+		font-weight: 500;
+		font-family: "Satoshi regular";
+		width: 100%;
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		font-size: 14px;
+	}
 
-  .form-group textarea {
-    resize: vertical;
-  }
+	.form-group textarea {
+		resize: vertical;
+	}
 
-  .submit-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #2f3396;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+	.submit-button {
+		padding: 10px 20px;
+		font-size: 16px;
+		color: #fff;
+		background-color: #2f3396;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
 
-  .submit-button:hover {
-    background-color: #1c1f58;
-  }
-  .main-form-section {
-    flex: 1;
-  }
-  .banner-top {
-    background-color: #f7f8fc;
-  }
-  @media (max-width: 48em) {
-    .contact-container {
-      flex-direction: column;
-    }
-    .main-form-section {
-      width: 100%;
-    }
-    .form-section {
-      margin-left: 0 !important;
-      width: 100% !important;
-    }
-  }
+	.submit-button:hover {
+		background-color: #1c1f58;
+	}
+	.main-form-section {
+		flex: 1;
+	}
+	.banner-top {
+		background-color: #f7f8fc;
+	}
+	@media (max-width: 48em) {
+		.contact-container {
+			flex-direction: column;
+		}
+		.main-form-section {
+			width: 100%;
+		}
+		.form-section {
+			margin-left: 0 !important;
+			width: 100% !important;
+		}
+	}
 </style>
 
 <div class="contact-container">
-  <!-- Content Section -->
-  <div class="content-section">
-    <h1 class="content-heading">{heading}</h1>
-    <p class="content-paragraph">{paragraph}</p>
-  </div>
+	<!-- Content Section -->
+	<div class="content-section">
+		<h1 class="content-heading">{heading}</h1>
+		<p class="content-paragraph">{paragraph}</p>
+	</div>
 
-  <!-- Form Section -->
-  <div class="main-form-section">
-    <div class="form-section">
-      <h2>Send us a message</h2>
-      <form id="contact-form">
-        <!-- Name & Surname -->
-        <div class="form-group">
-          <label for="name">Name & Surname</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your full name"
-          />
-          <span class="error-message"></span>
-        </div>
+	<!-- Form Section -->
+	<div class="main-form-section">
+		<div class="form-section">
+			<h2>Send us a message</h2>
+			<form id="contact-form">
+				<!-- Name & Surname -->
+				<div class="form-group">
+					<label for="name">Name & Surname</label>
+					<input type="text" id="name" name="name" placeholder="Your full name" />
+					<span class="error-message"></span>
+				</div>
 
-        <!-- Phone Number -->
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="Your phone number"
-          />
-          <span class="error-message"></span>
-        </div>
+				<!-- Phone Number -->
+				<div class="form-group">
+					<label for="phone">Phone Number</label>
+					<input type="tel" id="phone" name="phone" placeholder="Your phone number" />
+					<span class="error-message"></span>
+				</div>
 
-        <!-- Email Address -->
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your email address"
-          />
-          <span class="error-message"></span>
-        </div>
+				<!-- Email Address -->
+				<div class="form-group">
+					<label for="email">Email Address</label>
+					<input type="email" id="email" name="email" placeholder="Your email address" />
+					<span class="error-message"></span>
+				</div>
 
-        <!-- Message -->
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            placeholder="Your message"></textarea>
-          <span class="error-message"></span>
-        </div>
+				<!-- Message -->
+				<div class="form-group">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="4" placeholder="Your message"></textarea>
+					<span class="error-message"></span>
+				</div>
 
-        <!-- Submit Button -->
-        <button type="submit" class="submit-button">Send</button>
-      </form>
-    </div>
-  </div>
-  <div class="Submit-confirm">
-    <div class="form-section form-confirm">
-      <div><img src="../assets/mail-send.svg" alt="" /></div>
-      <h2 class="m-0">Thank you for your interest. We’ll talk soon!</h2>
-      <p>
-        We appreciate you taking the time to contact His House Care Centre. Your
-        message has been received, and we will respond as soon as possible.
-        Whether you’re inquiring about our services or simply connecting with
-        us, we value your interest and look forward to assisting you.
-      </p>
-      <p>
-        Thank you for being part of our community and supporting our mission to
-        provide care and comfort to those in need.
-      </p>
-    </div>
-  </div>
+				<!-- Submit Button -->
+				<button type="submit" class="submit-button">Send</button>
+			</form>
+		</div>
+	</div>
+	<div class="Submit-confirm">
+		<div class="form-section form-confirm">
+			<div><img src="../assets/mail-send.svg" alt="" /></div>
+			<h2 class="m-0">Thank you for your interest. We’ll talk soon!</h2>
+			<p>We appreciate you taking the time to contact His House Care Centre. Your message has been received, and we will respond as soon as possible. Whether you’re inquiring about our services or simply connecting with us, we value your interest and look forward to assisting you.</p>
+			<p>Thank you for being part of our community and supporting our mission to provide care and comfort to those in need.</p>
+		</div>
+	</div>
 </div>
 <script is:inline>
-  const form = document.getElementById("contact-form");
-  const submitButton = document.querySelector(".submit-button");
-  const mainFormSection = document.querySelector(".main-form-section");
-  const submitConfirm = document.querySelector(".Submit-confirm");
-  const errorMessages = document.querySelectorAll(".error-message");
+	const form = document.getElementById("contact-form");
+	const submitButton = document.querySelector(".submit-button");
+	const mainFormSection = document.querySelector(".main-form-section");
+	const submitConfirm = document.querySelector(".Submit-confirm");
+	const errorMessages = document.querySelectorAll(".error-message");
 
-  // Initially hide the Submit-confirm section
-  submitConfirm.style.display = "none";
+	// Initially hide the Submit-confirm section
+	submitConfirm.style.display = "none";
 
-  // Function to update button state
-  const updateButtonState = (sending) => {
-    submitButton.textContent = sending ? "Sending..." : "Send";
-    submitButton.style.backgroundColor = sending ? "#8893D6" : "#2f3396";
-    submitButton.disabled = sending;
-  };
+	// Function to update button state
+	const updateButtonState = (sending) => {
+		submitButton.textContent = sending ? "Sending..." : "Send";
+		submitButton.style.backgroundColor = sending ? "#8893D6" : "#2f3396";
+		submitButton.disabled = sending;
+	};
 
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
+	form.addEventListener("submit", async function (event) {
+		event.preventDefault();
 
-    let isValid = true;
+		let isValid = true;
 
-    // Validate all input fields
-    document
-      .querySelectorAll("#contact-form input, #contact-form textarea")
-      .forEach((field) => {
-        const formGroup = field.closest(".form-group");
-        const errorMessage = formGroup.querySelector(".error-message");
+		// Validate all input fields
+		document.querySelectorAll("#contact-form input, #contact-form textarea").forEach((field) => {
+			const formGroup = field.closest(".form-group");
+			const errorMessage = formGroup.querySelector(".error-message");
 
-        if (!field.value.trim()) {
-          formGroup.classList.add("invalid");
-          errorMessage.textContent = "This field is required";
-          isValid = false;
-        } else {
-          formGroup.classList.remove("invalid");
-          errorMessage.textContent = "";
-        }
+			if (!field.value.trim()) {
+				formGroup.classList.add("invalid");
+				errorMessage.textContent = "This field is required";
+				isValid = false;
+			} else {
+				formGroup.classList.remove("invalid");
+				errorMessage.textContent = "";
+			}
 
-        // Additional validation for email format
-        if (field.type === "email") {
-          const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-          if (!emailRegex.test(field.value)) {
-            formGroup.classList.add("invalid");
-            errorMessage.textContent = "Invalid email format";
-            isValid = false;
-          }
-        }
-      });
+			// Additional validation for email format
+			if (field.type === "email") {
+				const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+				if (!emailRegex.test(field.value)) {
+					formGroup.classList.add("invalid");
+					errorMessage.textContent = "Invalid email format";
+					isValid = false;
+				}
+			}
+		});
 
-    if (isValid) {
-      updateButtonState(true);
+		if (isValid) {
+			updateButtonState(true);
 
-      const formData = new FormData(form);
-      const data = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-        phone: formData.get("phone"),
-      };
+			const formData = new FormData(form);
+			const data = {
+				name: formData.get("name"),
+				email: formData.get("email"),
+				message: formData.get("message"),
+				phone: formData.get("phone"),
+			};
 
-      try {
-        // Send form data to the DigitalOcean function endpoint
-        const endpointUrl = "https://faas-lon1-917a94a7.doserverless.co/api/v1/web/fn-202370ab-5566-4646-9ce2-699cbe01c723/default/his-house-contact-us";
-        const response = await fetch(endpointUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
-        if (response.ok) {
-          // Show the Submit-confirm section and hide the main-form-section
-          mainFormSection.style.display = "none";
-          submitConfirm.style.display = "block";
-          console.log(response);
+			try {
+				// Send form data to the DigitalOcean function endpoint
+				//const endpointUrl = "https://faas-lon1-917a94a7.doserverless.co/api/v1/web/fn-202370ab-5566-4646-9ce2-699cbe01c723/default/his-house-contact-us";
+				const endpointUrl = "https://faas-lon1-917a94a7.doserverless.co/api/v1/web/fn-3c6493fe-1d73-4faa-a34e-0c4da8b8ccde/his-house-2/contact-us";
+				const response = await fetch(endpointUrl, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(data),
+				});
+				if (response.ok) {
+					// Show the Submit-confirm section and hide the main-form-section
+					mainFormSection.style.display = "none";
+					submitConfirm.style.display = "block";
+					console.log(response);
 
-          // Reset form fields
-          form.reset();
-        } else {
-          // Handle error if something goes wrong
-          errorMessages[0].textContent = "Network Error. Please try again.";
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        errorMessages[0].textContent = "Form submission failed. Please try again.";
-      } finally {
-        updateButtonState(false);
-      }
-    }
-  });
+					// Reset form fields
+					form.reset();
+				} else {
+					// Handle error if something goes wrong
+					errorMessages[0].textContent = "Network Error. Please try again.";
+				}
+			} catch (error) {
+				console.error("Error:", error);
+				errorMessages[0].textContent = "Form submission failed. Please try again.";
+			} finally {
+				updateButtonState(false);
+			}
+		}
+	});
 </script>
 
-
 <style>
-  .form-group {
-    position: relative;
-    margin-bottom: 20px;
-  }
+	.form-group {
+		position: relative;
+		margin-bottom: 20px;
+	}
 
-  .form-group input:invalid,
-  .form-group textarea:invalid {
-    /* border: 2px solid red; */
-  }
+	.form-group input:invalid,
+	.form-group textarea:invalid {
+		/* border: 2px solid red; */
+	}
 
-  .error-message::before {
-    content: url("/public/assets/exclamation-circle.svg");
-    margin-right: 5px;
-  }
-  .error-message {
-    position: absolute;
-    bottom: -20px;
-    right: 0;
-    color: #ff000d;
-    font-size: 12px;
-    visibility: hidden;
-    font-family: "Satoshi regular";
-    font-weight: 600;
-  }
+	.error-message::before {
+		content: url("/public/assets/exclamation-circle.svg");
+		margin-right: 5px;
+	}
+	.error-message {
+		position: absolute;
+		bottom: -20px;
+		right: 0;
+		color: #ff000d;
+		font-size: 12px;
+		visibility: hidden;
+		font-family: "Satoshi regular";
+		font-weight: 600;
+	}
 
-  .form-group.invalid .error-message {
-    visibility: visible;
-  }
+	.form-group.invalid .error-message {
+		visibility: visible;
+	}
 
-  .form-group.invalid input,
-  .form-group.invalid textarea {
-    border: 2px solid #ff000d;
-  }
-  .form-confirm {
-    display: flex;
-    height: 533px;
-    align-content: center;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-left: 140px !important;
-  }
-  .m-0 {
-    margin: 0px !important;
-    font-size: 32px !important;
-  }
-  .form-section.submit-button h2 {
-    font-size: 32px !important;
-  }
+	.form-group.invalid input,
+	.form-group.invalid textarea {
+		border: 2px solid #ff000d;
+	}
+	.form-confirm {
+		display: flex;
+		height: 533px;
+		align-content: center;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		margin-left: 140px !important;
+	}
+	.m-0 {
+		margin: 0px !important;
+		font-size: 32px !important;
+	}
+	.form-section.submit-button h2 {
+		font-size: 32px !important;
+	}
 </style>
