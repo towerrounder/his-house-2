@@ -5,25 +5,27 @@ import ContactDetails from "../components/ContactDetails.astro";
 ---
 
 <BaseLayout title="Contact" description="Send us a message">
-  <div class="stack">
-    <main class="">
-      <div class="banner-top">
-        <div class="wrapper">
-          <ContactData />
-        </div>
-      </div>
-    </main>
-    <main class="">
-      <!-- <div class="banner-top"> -->
-      <div class="wrapper">
-        <ContactDetails />
-      </div>
-      <!-- </div> -->
-    </main>
-  </div>
+	<link slot="head-end" rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<div class="stack">
+		<main class="">
+			<div class="banner-top">
+				<div class="wrapper">
+					<ContactData />
+				</div>
+			</div>
+		</main>
+		<main class="">
+			<!-- <div class="banner-top"> -->
+			<div class="wrapper">
+				<ContactDetails />
+			</div>
+			<!-- </div> -->
+		</main>
+	</div>
+	<script slot="body-end" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </BaseLayout>
 <style>
-  .banner-top {
-    background-color: #f7f8fc;
-  }
+	.banner-top {
+		background-color: #f7f8fc;
+	}
 </style>

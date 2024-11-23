@@ -1,165 +1,203 @@
 ---
-const {
-  heading = "Where You Can Find Us",
-  description = "Nestled in the heart of Meersig, Walvis Bay, our location is more than just a street address — it's a beacon of hope and care within the community.",
-  phone = "+264 64 22 0798",
-  fax = "088 647 240",
-  email = "hishouse@iway.na",
-  address = "14 Main Road, Meersig, Walvis Bay, Namibia",
-} = Astro.props;
+const { heading = "Where You Can Find Us", description = "Nestled in the heart of Meersig, Walvis Bay, our location is more than just a street address — it's a beacon of hope and care within the community.", phone = "+264 64 22 0798", fax = "088 647 240", email = "hishouse@iway.na", address = "14 Main Road, Meersig, Walvis Bay, Namibia" } = Astro.props;
 import "@fortawesome/fontawesome-free/css/all.min.css";
 ---
 
 <style>
-  /* Container */
-  .contact-section {
-    position: relative;
-    width: 100%;
-    height: 450px;
-    background: url("/public/assets/contact.png") center center/cover no-repeat;
-    display: flex;
+	/* Container */
+	.contact-section {
+		position: relative;
+		width: 100%;
+		height: 450px;
+		background: none;
+		display: flex;
 
-    align-items: center;
+		align-items: center;
 
-    border-radius: 8px;
-    margin: 70px 0px;
-  }
+		border-radius: 8px;
+		margin: 70px 0px;
+	}
 
-  /* Overlay Box */
-  .overlay-box {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 400px;
-    margin-left: 100px;
-    box-shadow: 0px 4px 9px 0px #00000040;
-  }
+	/* Overlay Box */
+	.overlay-box {
+		z-index: 2;
+		background: white;
+		padding: 20px;
+		border-radius: 8px;
+		max-width: 400px;
+		margin-left: 100px;
+		box-shadow: 0px 4px 9px 0px #00000040;
+	}
 
-  .overlay-box h2 {
-    font-weight: 900;
-    /* font-family: "Satoshi regular"; */
-    font-size: 30px;
-    margin-bottom: 10px;
-  }
+	.overlay-box h2 {
+		font-weight: 900;
+		/* font-family: "Satoshi regular"; */
+		font-size: 30px;
+		margin-bottom: 10px;
+	}
 
-  .overlay-box p {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
+	.overlay-box p {
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
 
-  .contact-details {
-    margin-top: 10px;
-    font-size: 16px;
-  }
+	.contact-details {
+		margin-top: 10px;
+		font-size: 16px;
+	}
 
-  .contact-details div {
-    display: flex;
-    gap: 15px;
-    margin: 5px 0;
-    color: #2f3396;
-    margin-bottom: 15px;
-    align-items: center;
-  }
-  .contact-details i {
-    color: #2f3396;
-  }
+	.contact-details div {
+		display: flex;
+		gap: 15px;
+		margin: 5px 0;
+		color: #2f3396;
+		margin-bottom: 15px;
+		align-items: center;
+	}
+	.contact-details i {
+		color: #2f3396;
+	}
 
-  .contact-details a {
-    font-family: "Satoshi regular";
-    font-weight: 400;
-    color: #2f3396;
-    text-decoration: underline;
-  }
+	.contact-details a {
+		font-family: "Satoshi regular";
+		font-weight: 400;
+		color: #2f3396;
+		text-decoration: underline;
+	}
 
-  .contact-details a:hover {
-    color: #101355;
-  }
+	.contact-details a:hover {
+		color: #101355;
+	}
 
-  @media (min-width: 48em) {
-    .contact-section.mobile {
-      display: none;
-    }
-  }
-  @media (max-width: 48em) {
-    .contact-section.mobile img {
-      width: 100%;
-      display: block;
-    }
-    .contact-section {
-      display: none;
-    }
-    .contact-section.mobile {
-      display: block;
-      height: auto;
-      margin: 40px 0;
-      position: static;
-      background: transparent;
-    }
-    .overlay-box {
-      max-width: 100%;
-      width: 100%;
-      margin: 0;
-      box-shadow: none;
-      border: 1px solid #dfdfdf;
-      border-radius: 0;
-      height: auto;
-    }
-  }
-  /* .contact-details a:hover {
-    text-decoration: underline;
-  } */
+	@media (min-width: 48em) {
+		.contact-section.mobile {
+			display: none;
+		}
+	}
+	@media (max-width: 48em) {
+		.contact-section.mobile img {
+			width: 100%;
+			display: block;
+		}
+		.contact-section {
+			display: none;
+		}
+		.contact-section.mobile {
+			display: block;
+			height: auto;
+			margin: 40px 0;
+			position: static;
+			background: transparent;
+		}
+		.overlay-box {
+			max-width: 100%;
+			width: 100%;
+			margin: 0;
+			box-shadow: none;
+			border: 1px solid #dfdfdf;
+			border-radius: 0;
+			height: auto;
+		}
+	}
+
+	#map {
+		border-radius: 8px;
+		height: 450px;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	@media (max-width: 64em) {
+		.contact-section {
+			background: url("/public/assets/contact.png") center center/cover no-repeat;
+		}
+		#map {
+			display: none;
+		}
+	}
 </style>
 
 <div class="contact-section">
-  <!-- Overlay Box -->
-  <div class="overlay-box">
-    <h2>{heading}</h2>
-    <p>{description}</p>
-    <div class="contact-details">
-      <div>
-        <i class="fas fa-phone"></i>
-        <a href={`tel:${phone}`}>{phone}</a>
-      </div>
-      <div>
-        <i class="fas fa-fax"> </i>
-        <a href={`tel:${fax}`}>{fax}</a>
-      </div>
+	<div id="map" class="rounded" style="position:absolute"></div>
 
-      <div>
-        <i class="fas fa-map-marker-alt"></i>
-        <a href="#">{address}</a>
-      </div>
-      <div>
-        <i class="fas fa-envelope"></i>
-        <a href={`mailto:${email}`}>{email}</a>
-      </div>
-    </div>
-  </div>
+	<!-- Overlay Box -->
+	<div class="overlay-box">
+		<h2>{heading}</h2>
+		<p>{description}</p>
+		<div class="contact-details">
+			<div>
+				<i class="fas fa-phone"></i>
+				<a href={`tel:${phone}`}>{phone}</a>
+			</div>
+			<div>
+				<i class="fas fa-fax"> </i>
+				<a href={`tel:${fax}`}>{fax}</a>
+			</div>
+
+			<div>
+				<i class="fas fa-map-marker-alt"></i>
+				<a href="#">{address}</a>
+			</div>
+			<div>
+				<i class="fas fa-envelope"></i>
+				<a href={`mailto:${email}`}>{email}</a>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="contact-section mobile">
-  <img src="../assets/map-mobile.png" alt="Map" />
-  <!-- Overlay Box -->
-  <div class="overlay-box">
-    <h2>{heading}</h2>
-    <p>{description}</p>
-    <div class="contact-details">
-      <div>
-        <i class="fas fa-phone"></i>
-        <a href={`tel:${phone}`}>{phone}</a>
-      </div>
-      <div>
-        <i class="fas fa-fax"> </i>
-        <a href={`tel:${fax}`}>{fax}</a>
-      </div>
+	<img src="../assets/map-mobile.png" alt="Map" />
+	<!-- Overlay Box -->
+	<div class="overlay-box">
+		<h2>{heading}</h2>
+		<p>{description}</p>
+		<div class="contact-details">
+			<div>
+				<i class="fas fa-phone"></i>
+				<a href={`tel:${phone}`}>{phone}</a>
+			</div>
+			<div>
+				<i class="fas fa-fax"> </i>
+				<a href={`tel:${fax}`}>{fax}</a>
+			</div>
 
-      <div>
-        <i class="fas fa-map-marker-alt"></i>
-        <a href="#">{address}</a>
-      </div>
-      <div>
-        <i class="fas fa-envelope"></i>
-        <a href={`mailto:${email}`}>{email}</a>
-      </div>
-    </div>
-  </div>
+			<div>
+				<i class="fas fa-map-marker-alt"></i>
+				<a href="#">{address}</a>
+			</div>
+			<div>
+				<i class="fas fa-envelope"></i>
+				<a href={`mailto:${email}`}>{email}</a>
+			</div>
+		</div>
+	</div>
 </div>
+<script is:inline>
+	(function () {
+		const initalZoom = 17;
+		const location = [-22.97557700948279, 14.488800135543148]; // Original center point
+		const shiftedLocation = [-22.97507700948279, 14.485800135543148]; // Adjusted longitude for a slight left shift
+
+		const checkLeafletLoaded = setInterval(() => {
+			// @ts-ignore
+			if (typeof L !== "undefined") {
+				clearInterval(checkLeafletLoaded);
+
+				// @ts-ignore
+				const map = L.map("map").setView(shiftedLocation, initalZoom); // Use shiftedLocation here
+
+				// @ts-ignore
+				const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+					maxZoom: 19,
+					attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+				}).addTo(map);
+
+				// @ts-ignore
+				const marker = L.marker(location).addTo(map).bindPopup("<b>His House Care Centre</b><br />14 Main Road, Meersig, Walvis Bay, Namibia.").openPopup();
+			}
+		}, 100);
+	})();
+</script>
